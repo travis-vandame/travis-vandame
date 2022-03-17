@@ -44,3 +44,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### GitHub Pages Deployment
+
+```sh
+git subtree push --prefix dist origin gh-pages
+```

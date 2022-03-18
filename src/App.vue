@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
+import TheThemeSwitch from "@/components/TheThemeSwitch.vue";
 </script>
 
-<template>
+<template> 
   <header>
     <img
       alt="Vue logo"
@@ -16,6 +17,8 @@ import HelloWorld from "@/components/HelloWorld.vue";
     <div class="wrapper">
       <HelloWorld msg="Travis VanDame" />
 
+      <TheThemeSwitch />
+     
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -27,7 +30,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 </template>
 
 <style>
-@import "@/assets/base.css";
+@import "@/assets/styles/index.css";
 
 #app {
   max-width: 1280px;

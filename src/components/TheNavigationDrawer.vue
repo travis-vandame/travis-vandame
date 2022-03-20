@@ -2,7 +2,6 @@
 
 <template>
     <h2>this.stack</h2>
-
     <div>
         <img
             alt="Vite logo"
@@ -22,8 +21,7 @@
             height="100"
         />
         <h3><a target="_blank" href="https://vuejs.org/">.vue()</a></h3>
-    </div>    
-    
+    </div>      
     <div>
         <svg 
             id="mdn-logo" 
@@ -51,7 +49,6 @@
         
         <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS">.css()</a></h3>
     </div>
-
     <div>
         <img
             alt="GitHub logo"

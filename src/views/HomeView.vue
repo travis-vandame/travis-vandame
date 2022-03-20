@@ -5,16 +5,15 @@
     <div class="b-card-profile">
       <h1>.is()</h1>
       <b>~:$ full stack developer</b>
-      <font-awesome-icon icon="fa-brands fa-linkedin" />
     </div>
     <div class="b-card-story">
       <article style="margin:20px">
-        <p>Wellcome to my work in progress. While you click around the site keep in mind if your cureous about what makes it tick your can pop the 
+        <p>Welcome to my work in progress. While you click around the site keep in mind if your curious about what makes it tick your can pop the 
         hood and see what keeps this thing on over in the GitHub repository.</p>
 
         <p>This site is being developed using the technology stack listed in the ltr navigation drawer. If your having trouble finding it just
         <a href="#">click here</a> and I'll light it up for you. I will not be using any UI Component or CSS frameworks for this site as it's intended to be
-        a multi pourpose solution. The requirements for the project are as follows.</p>
+        a multi purpose solution. The requirements for the project are as follows.</p>
       </article>       
     </div>
     <div class="b-card-logo">

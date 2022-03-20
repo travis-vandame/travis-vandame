@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import TvAppBarLink from './TvAppBarLink.vue';
-import TheThemeSwitchVue from '../TheThemeSwitch.vue';
+import TvButton from '../TvButton/TvButton.vue';
+import TvSwitch from '../TvSwitch/TvSwitch.vue';
+import TvAppBarLink from './TvAppBarLink.vue'
+import TvModal from '../TvModal/TvModal.vue'
+import TheThemeSwitch from '../TheThemeSwitch.vue'
 
 import { 
     collapsed, 
@@ -9,6 +12,7 @@ import {
     toggleTvAppBarMinimal, 
     tvAppBarHeight, 
     tvAppBarWidth } from './state';
+import { ref } from '@vue/runtime-dom';
 
 interface Props {
     title?: string
@@ -17,6 +21,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(),{
     title: 'Travis VanDame'
 })
+
+const showModal = ref(false)
 </script>
 
 <template>
@@ -75,11 +81,32 @@ const props = withDefaults(defineProps<Props>(),{
             <div
                 v-if="!collapsed && !minimal" 
                 class="tv-appbar-system-information">
-                display
-                <TheThemeSwitchVue />
+               
+                
+                <TvSwitch />
+
+
+                <TheThemeSwitch />
+                
+                <TvButton @click="showModal = true">Bug Report</TvButton>
             </div>
         </Transition>
     </div>
+    
+    <Teleport to="body">
+        <!-- use the modal component, pass in the prop -->
+        <TvModal :isActive="showModal" @close="showModal = false">
+            <template #header>
+                Bug Reporting System
+            </template>
+            <template #body>
+                [ Bug Report Form ]
+            </template>
+            <template #footer>
+                [ footer ]
+            </template>
+        </TvModal>
+    </Teleport>    
 </template>
 
 <style>

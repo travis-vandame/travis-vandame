@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const props = defineProps({
-  show: Boolean
+  isActive: Boolean
 })
 </script>
 
 <template>
   <Transition name="modal">
-    <div v-if="show" class="modal-mask">
+    <div v-if="isActive" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
@@ -20,11 +20,14 @@ const props = defineProps({
           <div class="modal-footer">
             <slot name="footer">
               default footer
-              <button
-                class="modal-default-button"
-                @click="$emit('close')"
-              >OK</button>
             </slot>
+            
+            <button
+              class="modal-default-button"
+              @click="$emit('close')">
+              
+              OK
+            </button>
           </div>
         </div>
       </div>

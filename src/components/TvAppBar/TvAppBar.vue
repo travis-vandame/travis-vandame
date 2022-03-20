@@ -35,7 +35,7 @@ const props = withDefaults(defineProps<Props>(),{
         </div>
         <div class="tv-appbar-links">
             <TvAppBarLink to="/" icon="fas fa-home">.home()</TvAppBarLink>
-            <TvAppBarLink to="/" icon="fas fa-home">.biogrophy()</TvAppBarLink>
+            <TvAppBarLink to="/" icon="fas fa-home">.biography()</TvAppBarLink>
             <TvAppBarLink to="/" icon="fas fa-home">.projects()</TvAppBarLink>
             <TvAppBarLink to="/" icon="fas fa-home">.about()</TvAppBarLink>          
         </div>

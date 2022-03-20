@@ -10,7 +10,7 @@ const showModal = ref(false)
     <nav>
         <router-link :to="{ name: 'home' }" tag="button"><h1>.home()</h1></router-link>
         <router-link :to="{ name: 'about' }" tag="button"><h1>.about()</h1></router-link>
-        <a href="#" @click="showModal = true"><h1>.prefrences()</h1></a>
+        <a href="#" @click="showModal = true"><h1>.preferences()</h1></a>
     </nav>
 
     <Teleport to="body">

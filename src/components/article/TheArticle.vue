@@ -43,8 +43,6 @@ import SupportIcon from "./icons/IconSupport.vue";
     </template>
   </ArticleItem>
 
-
-
   <ArticleItem>
     <template #icon>
       <CommunityIcon />

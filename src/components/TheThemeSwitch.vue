@@ -77,8 +77,8 @@ function getMediaPreference() {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 45px;
+    height: 19px;
 }
 
 /* Hide default HTML checkbox */
@@ -104,8 +104,8 @@ function getMediaPreference() {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 11px;
+    width: 11px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -129,10 +129,10 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+    border-radius: 14px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+    border-radius: 40%;
 }
 </style>

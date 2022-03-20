@@ -12,6 +12,9 @@ in this case :root represents the <html> element. :root has a higher specificity
     --vt-c-black-mute: #282828;
 
     --vt-c-indigo: #2c3e50;
+    --vt-c-green: hsla(160, 100%, 37%, 1);
+    --vt-c-vite-yellow: #FFD32D;
+    --vt-c-mdc-blue: #74a9f6;
 
     --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
     --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);

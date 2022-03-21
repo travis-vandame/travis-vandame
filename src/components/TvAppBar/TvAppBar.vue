@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import TvButton from '../TvButton/TvButton.vue';
 import TvSwitch from '../TvSwitch/TvSwitch.vue';
 import TvAppBarLink from './TvAppBarLink.vue'
 import TvModal from '../TvModal/TvModal.vue'
 import TheThemeSwitch from '../TheThemeSwitch.vue'
-
 import { 
     collapsed, 
     minimal, 
@@ -12,7 +12,6 @@ import {
     toggleTvAppBarMinimal, 
     tvAppBarHeight, 
     tvAppBarWidth } from './state';
-import { ref } from '@vue/runtime-dom';
 
 interface Props {
     title?: string
@@ -37,7 +36,7 @@ const showModal = ref(false)
         <div 
             v-if="!minimal" 
             class="tv-appbar-headline">
-            <h2 style="margin: 0px; padding: 0px; color: var(--vt-c-mdc-blue);">{{ props.title }}</h2>
+            <h2 v-text="props.title" class="tv-appbar-title"></h2>
         </div>
         <div class="tv-appbar-links">
             <TvAppBarLink to="/" icon="fas fa-home">.home()</TvAppBarLink>
@@ -81,10 +80,12 @@ const showModal = ref(false)
             <div
                 v-if="!collapsed && !minimal" 
                 class="tv-appbar-system-information">
-               
-                
-                <TvSwitch />
 
+                <TvSwitch
+                    id="travis"
+                    labelTextDisabled="Disabled" 
+                    labelTextEnabled="Enabled"                    
+                    :disabled="false" />
 
                 <TheThemeSwitch />
                 
@@ -111,8 +112,7 @@ const showModal = ref(false)
 
 <style>
 :root {
-/* --tv-c-appbar-bg-color: #2f855a; */
---tv-c-appbar-bg-color: var(--vt-c-black-mute)
+    --tv-c-appbar-bg-color: var(--vt-c-black-mute)
 }
 </style>
 
@@ -129,6 +129,12 @@ const showModal = ref(false)
     background-color: var(--tv-c-appbar-bg-color);
     box-shadow: 0 3px 2px -1px var(--vt-c-vite-yellow);
     transition: 0.3s ease;  
+}
+
+.tv-appbar-title {
+    margin: 0px; 
+    padding: 0px; 
+    color: var(--vt-c-mdc-blue);    
 }
 
 .tv-appbar-navigation {

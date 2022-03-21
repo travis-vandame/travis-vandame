@@ -1,40 +1,42 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-
 interface Props {
     id: string
+    isActive: boolean
     disabled: boolean
-    ["default-state"]: boolean
-    ["label-enabled"]: string
-    ["label-disabled"]: string
+    defaultState: boolean
+    labelTextEnabled: string
+    labelTextDisabled: string
 }
 
 const props = withDefaults(defineProps<Props>(),{
     id: 'default',
     disabled: false,
-    ["default-state"]: false,
-    ["label-enabled"]: 'On',
-    ["label-disabled"]: 'Off'
+    isActive: false,
+    defaultState: false,
+    labelTextEnabled: 'On',
+    labelTextDisabled: 'Off',    
 })
 
-const checkedValue = ''
-const currentState = ref(props['default-state'])
+const emit = defineEmits(['change'])
 
-watch(props['default-state'], async (newState, oldState) => {
-    currentState.value = props['default-state']
-}
+let labelTextEnabled = props.labelTextEnabled
+let labelTextDisabled = props.labelTextDisabled
 </script>
 
 <template>
-    <label for="toggle_checkbox" class="toggle__checkbox">
-        <span v-if="checkedValue" class="switch__label">On</span>
-        <span v-if="!checkedValue" class="switch__label">Off</span>
+    <label 
+        :for="id + '_checkbox'" 
+        :class="{'active': isActive}" 
+        class="toggle__checkbox">
+        
+        <span v-if="isActive" class="switch__label">{{ labelTextEnabled }}</span>
+        <span v-if="!isActive" class="switch__label">{{ labelTextDisabled }}</span>
 
         <input
-            v-model="checkedValue"
+            v-model="isActive"    
             type="checkbox"
-            id="toggle_checkbox">
-        
+            :id="props.id + '_checkbox'"
+            :disabled="props.disabled">
         <span class="toggle__switch"></span>
     </label>
 </template>

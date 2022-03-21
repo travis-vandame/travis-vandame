@@ -1,5 +1,6 @@
 # .\travis-vandame\
 https://www.youtube.com/channel/UCro4e-xxAYrgwt5cOccnE0A
+https://tallpad.com/series/vuejs-misc/lessons/from-options-api-to-script-setup-using-the-composition-api
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

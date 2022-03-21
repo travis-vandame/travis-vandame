@@ -1,0 +1,118 @@
+<script setup lang="ts">
+</script>
+
+<template>
+    <div class="tv-app-wrapper">
+        <header class="tv-app-header">
+            <slot name="header"></slot>
+        </header>
+        <article class="tv-app-article">[article]</article>
+        <aside class="tv-app-aside">[aside]</aside>
+        <div class="tv-app-advertising">[advertising]</div>
+        <div class="tv-app-footer">[footer]</div>
+    </div>
+</template>
+
+<style scoped>
+.tv-app-wrapper {
+    min-height: 100vh;
+    display: grid;
+    gap: 24px;
+    grid-template-areas: 
+        "header"
+        "aside"        
+        "article"
+        "advertising"
+        "footer";
+}
+.tv-app-header {
+    grid-area: header;
+}
+.tv-app-article {
+    grid-area: article;
+}
+.tv-app-aside {
+    grid-area: aside;
+}
+.tv-app-advertising {
+    grid-area: advertising;
+}
+.tv-app-footer {
+    grid-area: footer;
+}
+
+@media (min-width: 480px) {
+    .tv-app-wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: 
+            "header" "header"
+            "nav"  "nav"
+            "sidebar" "article"
+            "advertising" "footer";
+        gap: 16px;
+    }
+}
+
+@media (min-width: 600px) {
+    .tv-app-wrapper {
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-areas: 
+            "header header header"
+            "aside article advertising"
+            "aside article advertising"
+            "footer footer footer";
+        gap: 24px;
+    }
+}
+</style>
+
+<!--
+<template>
+    <div>
+        <header>
+            <slot name="app-bar"></slot>
+        </header>
+        <aside>
+            <slot name="navigation-drawer"></slot>
+        </aside>
+        <main>
+            <slot name="main"></slot>
+        </main>
+        <footer>
+            <slot name="footer"></slot>
+        </footer>
+    </div>
+</template>
+
+<style scoped>
+div {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 5px;
+  gap: 5px;  
+}
+
+header {
+  grid-area: header;
+  height: 110px;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+main {
+   
+}
+
+footer {
+  grid-area: footer;
+}
+</style>
+-->

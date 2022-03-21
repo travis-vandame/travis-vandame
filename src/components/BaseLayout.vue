@@ -1,20 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TvLayout from './TvLayout/TvLayout.vue';
+import TvAppBar from './TvAppBar/TvAppBar.vue';
+</script>
 
 <template>
-    <div class="container">
-        <header>
-            <slot name="app-bar"></slot>
-        </header>
-        <aside>
-            <slot name="navigation-drawer"></slot>
-        </aside>
-        <main style="margin-top: 96px;">
-            <slot name="main"></slot>
-        </main>
-        <footer>
-            <slot name="footer"></slot>
-        </footer>
-    </div>
+  <TvLayout>
+    <template v-slot:header>
+      <TvAppBar />
+    </template>
+  </TvLayout>
 </template>
-
-<style scoped></style>

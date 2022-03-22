@@ -28,5 +28,5 @@ coverage
 *.sw?
 
 # Works in progress
-/components/TvAppBar
-/components/TvCheckBox
+/components/TvAppBar/
+/components/TvCheckBox/

@@ -14,7 +14,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     </template>
     <template #heading>Documentation</template>
     <template #content>
-      Comming soon i'll be creating documentation and examples focusing on the latest version of Vue. 
+      Coming soon i'll be creating documentation and examples focusing on the latest version of Vue. 
       For now though you can visit Vue’s <a target="_blank" href="https://vuejs.org/">official documentation</a>
       as it provides you with all information you need to get started.
     </template>

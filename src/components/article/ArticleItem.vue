@@ -24,22 +24,18 @@
     "icon content";
   grid-template-columns: min-content;
 }
-
 .icon {
   text-align: center;
   grid-area: icon;
   padding: 5px;
 }
-
 .heading { 
   grid-area: heading;
 }
-
 .content {
   grid-area: content;
   margin-right: 25%;
 }
-
 h3 {
   margin: 0;
   color: var(--color-heading);

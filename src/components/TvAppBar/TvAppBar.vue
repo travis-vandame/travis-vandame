@@ -178,7 +178,6 @@ const showModal = ref(false)
 .v-enter-from, .v-leave-to {
   opacity: 0;
 }
-
 @media (max-width: 480px) {
     .tv-appbar {
         flex-direction: column;

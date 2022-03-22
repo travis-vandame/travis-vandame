@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import TheNavigationDrawer from "./components/TheNavigationDrawer.vue";
-import TheFooter from "./components/TheFooter.vue";
+import TvFooter from "./components/TvFooter/TvFooter.vue";
 import BaseLayout from "./components/BaseLayout.vue";
 import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
 </script>
@@ -18,7 +18,7 @@ import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
       <RouterView />
     </template>
     <template v-slot:footer>
-      <TheFooter />
+      <TvFooter />
     </template>
   </BaseLayout>
 </template>

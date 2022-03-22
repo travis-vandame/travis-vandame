@@ -48,14 +48,12 @@ const emit = defineEmits<{
     user-select: none;
     cursor: pointer;
 }
-
 .toggle__checkbox input[type="checkbox"] {
     opacity: 0; 
     position: absolute;
     width: 1px;
     height: 1px;
 }
-
 .toggle__checkbox .toggle__switch {
     display: inline-block;
     height: 12px;
@@ -67,7 +65,6 @@ const emit = defineEmits<{
     margin-left: 10px;
     transition: all .25s;
 }
-
 .toggle__checkbox .toggle__switch::after,
 .toggle__checkbox .toggle__switch::before {
     content: "";
@@ -81,28 +78,23 @@ const emit = defineEmits<{
     transform: translateX(0);
     transition: all .25s cubic-bezier(.5, -.6, .5, 1.6);
 }
-
 .toggle__checkbox .toggle__switch::after {
     background: #4D4D4D;
     box-shadow: 0 0 1px #666;
 }
-
 .toggle__checkbox .toggle__switch::before {
     background: #4D4D4D;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     opacity: 0;
 }
-
 .active .toggle__switch {
     background: #adedcb;
     box-shadow: inset 0 0 1px #adedcb;
 }
-
 .active .toggle__switch::after,
 .active .toggle__switch::before {
     transform: translateX(40px - 18px);
 }
-
 .active .toggle__switch::after {
     left: 23px;
     background: #53B883;

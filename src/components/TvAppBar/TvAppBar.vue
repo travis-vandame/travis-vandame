@@ -14,16 +14,33 @@ import {
     tvAppBarHeight, 
     tvAppBarWidth } from './state';
 
-const { windowHeight, windowWidth } = useWindow()
-
-interface Props {
-    title?: string
-}
-
-const props = withDefaults(defineProps<Props>(),{
-    title: 'T-App Travis Application Services'
+const props = withDefaults(defineProps<{
+  id?: string
+  title?: string
+  isActive?: boolean
+  disabled?: boolean
+  defaultState: boolean
+  labelTextEnabled: string
+  labelTextDisabled: string
+}>(), {
+  id: 'default',
+  title: 'T-App Development',
+  disabled: false,
+  isActive: false,
+  showLabel: true,
+  defaultState: false,
+  labelTextDisabled: 'Off',
+  labelTextEnabled: 'On'
 })
 
+// TODO: On click event is trying to change a read only prop needs fixed. Doing some type script refactoring
+// and broke it.
+
+const emit = defineEmits<{
+  (event: 'change'): void
+}>()
+
+const { windowHeight, windowWidth } = useWindow()
 const showModal = ref(false)
 </script>
 
@@ -47,13 +64,8 @@ const showModal = ref(false)
             -->
         </div>
         <div class="tv-appbar-links">
-            [ Links ]
-            <!--
-            <TvAppBarLink to="/" icon="fas fa-home">.home()</TvAppBarLink>
-            <TvAppBarLink to="/" icon="fas fa-home">.biography()</TvAppBarLink>
-            <TvAppBarLink to="/" icon="fas fa-home">.projects()</TvAppBarLink>
-            <TvAppBarLink to="/" icon="fas fa-home">.about()</TvAppBarLink>          
-            -->
+            <TvAppBarLink to="/" icon="fas fa-home">Home</TvAppBarLink>
+            <TvAppBarLink to="/" icon="fas fa-home">Project</TvAppBarLink>
         </div>
         <div class="tv-appbar-interactive">
             <span
@@ -85,7 +97,7 @@ const showModal = ref(false)
         <div class="tv-appbar-flexbox-break-item"></div>
         <Transition>
             <div
-                v-if="!collapsed" 
+                v-show="!collapsed" 
                 class="tv-appbar-system-information">
 
                 <TvSwitch
@@ -128,6 +140,7 @@ const showModal = ref(false)
     justify-content: flex-start;
     flex-wrap: wrap;
     position: fixed;
+    flex-basis: auto;
     height: v-bind(tvAppBarHeight);
     width: v-bind(tvAppBarWidth);
     align-items: center;
@@ -144,7 +157,7 @@ const showModal = ref(false)
     margin-left: 15px;
 }
 .tv-appbar-headline {
-    margin-left: 43px;
+    margin-left: 24px;
 }
 .tv-appbar-links {
     margin-left: auto;
@@ -154,7 +167,7 @@ const showModal = ref(false)
     margin-right: 24px;
 }
 .tv-appbar-flexbox-break-item {
-    flex-basis: 100%;
+    flex-basis: 100%; /* Things that make you think. TJV :P */
     height: 0px;
 }
 .tv-appbar-system-information {
@@ -181,6 +194,7 @@ const showModal = ref(false)
 }
 @media (max-width: 480px) {
     .tv-appbar {
+        flex-basis: auto;
         flex-direction: column;
         justify-content: flex-end;
         width: v-bind(tvAppBarWidth);
@@ -196,11 +210,14 @@ const showModal = ref(false)
     .tv-appbar-headline {
         display: none;
     }
-    .tv-appbar-links { }
+    .tv-appbar-links { 
+
+    }
     .tv-appbar-interactive {
         order: -1;
     }
     .tv-appbar-interactive, span, font-awesome-icon {
+        margin-right:auto;
         font-size: xx-large;
     }
     .tv-appbar-overflow {
@@ -208,6 +225,24 @@ const showModal = ref(false)
     }
     .tv-appbar-flexbox-break-item { }
 
-    .tv-appbar-system-information { }
+    .tv-appbar-system-information { 
+        padding: 0px;
+        margin: 0px;
+
+    }
+}
+@media (max-width: 600px) {
+    .tv-appbar {
+        width: v-bind(tvAppBarWidth);
+        height: v-bind(tvAppBarHeight);
+        height: auto;
+    }    
+    .tv-appbar-links {
+        margin-right: 30px; 
+        order: 3
+    }
+    .tv-appbar-interactive { 
+        margin-left: auto;
+    }
 }
 </style>

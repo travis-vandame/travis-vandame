@@ -7,11 +7,9 @@ export function useWindow() {
    
     useEventListener(window, 'resize', (event: 
         {
-
             innerWidth: number; 
             innerHeight: number; 
         }) => {
-            console.log(event)
             windowWidth.value = window.innerWidth
             windowHeight.value = window.innerHeight
         })

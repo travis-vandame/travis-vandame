@@ -21,7 +21,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(),{
-    title: 'Travis VanDame'
+    title: 'T-App Travis Application Services'
 })
 
 const showModal = ref(false)

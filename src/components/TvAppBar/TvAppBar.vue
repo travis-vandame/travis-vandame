@@ -47,6 +47,7 @@ const showModal = ref(false)
             -->
         </div>
         <div class="tv-appbar-links">
+            [ Links ]
             <!--
             <TvAppBarLink to="/" icon="fas fa-home">.home()</TvAppBarLink>
             <TvAppBarLink to="/" icon="fas fa-home">.biography()</TvAppBarLink>

@@ -15,7 +15,7 @@ export function toggleTvAppBarMinimal(): boolean {
 export const TVAPPBAR_HEIGHT = 48
 export const TVAPPBAR_HEIGHT_EXPANDED = 96
 export const TVAPPBAR_WIDTH_PERCENT = '100%'
-export const TVAPPBAR_WIDTH_PERCENT_MINIMAL = '15%'
+export const TVAPPBAR_WIDTH_PERCENT_MINIMAL = '20%'
 
 export const tvAppBarHeight = computed(
     () => `${collapsed.value ? TVAPPBAR_HEIGHT : TVAPPBAR_HEIGHT_EXPANDED }px`

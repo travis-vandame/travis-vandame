@@ -1,39 +1,40 @@
 <script setup lang="ts">
-interface Props {
-    id: string
-    isActive: boolean
-    disabled: boolean
-    defaultState: boolean
-    labelTextEnabled: string
-    labelTextDisabled: string
-}
-
-const props = withDefaults(defineProps<Props>(),{
-    id: 'default',
-    disabled: false,
-    isActive: false,
-    defaultState: false,
-    labelTextEnabled: 'On',
-    labelTextDisabled: 'Off',    
+const props = withDefaults(defineProps<{
+  id?: string
+  isActive?: boolean
+  disabled?: boolean
+  defaultState: boolean
+  labelTextEnabled: string
+  labelTextDisabled: string
+}>(), {
+  id: 'default',
+  disabled: false,
+  isActive: false,
+  showLabel: true,
+  defaultState: false,
+  labelTextDisabled: 'Off',
+  labelTextEnabled: 'On'
 })
 
-const emit = defineEmits(['change'])
+// TODO: On click event is trying to change a read only prop needs fixed. Doing some type script refactoring
+// and broke it.
 
-let labelTextEnabled = props.labelTextEnabled
-let labelTextDisabled = props.labelTextDisabled
+const emit = defineEmits<{
+  (event: 'change'): void
+}>()
 </script>
 
 <template>
     <label 
-        :for="id + '_checkbox'" 
-        :class="{'active': isActive}" 
+        :for="props.id + '_checkbox'" 
+        :class="{'active': props.isActive}" 
         class="toggle__checkbox">
         
-        <span v-if="isActive" class="switch__label">{{ labelTextEnabled }}</span>
-        <span v-if="!isActive" class="switch__label">{{ labelTextDisabled }}</span>
+        <span v-if="props.isActive" class="switch__label">{{ props.showLabel ? props.labelTextEnabled : '' }}</span>
+        <span v-if="!props.isActive" class="switch__label">{{ props.showLabel ? props.labelTextDisabled : '' }}</span>
 
         <input
-            v-model="isActive"    
+            v-model="props.isActive"    
             type="checkbox"
             :id="props.id + '_checkbox'"
             :disabled="props.disabled">

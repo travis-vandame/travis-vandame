@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import TheThemeSwitch from './TheThemeSwitch.vue';
-import Modal from './modal/Modal.vue';
+import Modal from './TvModal/TvModal.vue';
 
 const showModal = ref(false)
 </script>

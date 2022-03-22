@@ -1,9 +1,19 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{
+  id?: string
+}>(), {
+  id: 'default'
+})
+
+const emit = defineEmits<{
+  (event: 'change'): void
+}>()
 </script>
 
 <template>
     <div class="tv-app-wrapper">
         <header class="tv-app-header">
+            <!-- @slot Site header -->
             <slot name="header"></slot>
         </header>
         <article class="tv-app-article">[article]</article>

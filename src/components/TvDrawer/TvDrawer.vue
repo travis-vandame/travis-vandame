@@ -71,18 +71,14 @@ div {
     margin: 20px;
     padding: 20px;
 }
-
 h2, h3 {
     text-align: center;
     margin: 0px;
 }
-
 .logo {
   display: block;
   margin: auto;
 }
-
 .logo-m{fill:#74a9f6;}
-
 .logo-text{fill:#fbfbfe;}
 </style>

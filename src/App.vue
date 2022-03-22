@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import TheNavigationDrawer from "./components/TheNavigationDrawer.vue";
+import TvDrawer from "./components/TvDrawer/TvDrawer.vue";
 import TvFooter from "./components/TvFooter/TvFooter.vue";
 import BaseLayout from "./components/BaseLayout.vue";
 import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
@@ -12,7 +12,7 @@ import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
       <TvAppBarVue />
     </template>
     <template v-slot:navigation-drawer>
-      <TheNavigationDrawer />
+      <TvDrawer />
     </template>
     <template v-slot:main>
       <RouterView />

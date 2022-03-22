@@ -17,7 +17,10 @@ const emit = defineEmits<{
             <slot name="header"></slot>
         </header>
         <article class="tv-app-article">[article]</article>
-        <aside class="tv-app-aside">[aside]</aside>
+        <aside class="tv-app-aside">
+            <!-- @slot Site drawer -->
+            <slot name="aside"></slot>
+        </aside>
         <div class="tv-app-advertising">[advertising]</div>
         <div class="tv-app-footer">
             <!-- @slot Site footer -->

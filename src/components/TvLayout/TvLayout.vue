@@ -50,7 +50,6 @@ const emit = defineEmits<{
 .tv-app-footer {
     grid-area: footer;
 }
-
 @media (min-width: 480px) {
     .tv-app-wrapper {
         grid-template-columns: 1fr 3fr;
@@ -62,7 +61,6 @@ const emit = defineEmits<{
         gap: 16px;
     }
 }
-
 @media (min-width: 600px) {
     .tv-app-wrapper {
         grid-template-columns: 1fr 6fr 1fr;

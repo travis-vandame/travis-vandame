@@ -17,7 +17,7 @@ const showModal = ref(false)
         <!-- use the modal component, pass in the prop -->
         <modal :show="showModal" @close="showModal = false">
             <template #header>
-                <h3>Prefrences</h3>
+                <h3>Preferences</h3>
             </template>
             <template #body>
                 <TheThemeSwitch />

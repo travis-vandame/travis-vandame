@@ -34,11 +34,9 @@ const isActive = true;
     .fade-enter-active, .fade-leave-active {
         transition: opacity 0.1s;
     }
-
     .fade-enter, .fade-leave-to {
         opacity: 0;
     }
-
     .link {
         cursor: pointer;
         position: relative;
@@ -53,15 +51,12 @@ const isActive = true;
         color: white;
         text-decoration: none;
     }
-
     .link:hover {
         background-color: var(--sidebar-item-hover);
     }
-
     .link.active {
         background-color: var(--sidebar-item-active);
     }
-
     .link .icon {
         flex-shrink: 0;
         width: 25px;

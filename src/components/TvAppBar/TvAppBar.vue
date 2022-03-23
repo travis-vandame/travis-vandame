@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { useWindow } from '../../composables/window'
 import TvButton from '../TvButton/TvButton.vue';
 import TvSwitch from '../TvSwitch/TvSwitch.vue';
-import TvAppBarLink from './TvAppBarLink.vue'
 import TvModal from '../TvModal/TvModal.vue'
 import TheThemeSwitch from '../TheThemeSwitch.vue'
 import { 
@@ -64,8 +63,10 @@ const showModal = ref(false)
             -->
         </div>
         <div class="tv-appbar-links">
-            <TvAppBarLink to="/" icon="fas fa-home">Home</TvAppBarLink>
-            <TvAppBarLink to="/" icon="fas fa-home">Project</TvAppBarLink>
+            <tv-button 
+                text="Home"
+                background="--tv-c-appbar-bg-color"></tv-button>
+            <tv-button text="Project"></tv-button>
         </div>
         <div class="tv-appbar-interactive">
             <span

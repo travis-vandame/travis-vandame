@@ -65,6 +65,7 @@ const showModal = ref(false)
         <div class="tv-appbar-links">
             <tv-button 
                 text="Home"
+                :cssOutline="true"
                 cssBackgroundColor=""
                 background="">
             </tv-button>

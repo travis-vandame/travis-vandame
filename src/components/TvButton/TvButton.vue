@@ -36,14 +36,13 @@ onMounted(() => { })
     :hoverColor="props.cssHoverColor">
 
     {{ props.text }}
-    <slot></slot>
+    <slot class=""></slot>
   </button>
 </template>
 
 <style module>
 /* https://material.io/components/buttons#specs */
 .button {
-    position: absolute;
     background-color: v-bind(cssBackgroundColor);
     color: var(--vt-c-green);
     display: inline-block;

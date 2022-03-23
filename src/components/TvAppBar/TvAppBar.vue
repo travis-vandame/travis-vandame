@@ -65,7 +65,9 @@ const showModal = ref(false)
         <div class="tv-appbar-links">
             <tv-button 
                 text="Home"
-                background="--tv-c-appbar-bg-color"></tv-button>
+                cssBackgroundColor=""
+                background="">
+            </tv-button>
             <tv-button text="Project"></tv-button>
         </div>
         <div class="tv-appbar-interactive">

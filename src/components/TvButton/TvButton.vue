@@ -1,17 +1,22 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, useCssModule } from 'vue'
+
+useCssModule('button')
 
 const props = defineProps({
-  type: String, // Floating | Raised | Flat
-  outlined: Boolean,
-  background: String,
-  hover: String,
-  text: String
+  text: String,
+  cssType: String, // Floating | Raised | Flat 
+  cssOutline: Boolean,
+  cssBackgroundColor: String,
+  cssHoverColor: String,
 })  
-
-const cssOutlined = (props.outlined ? '1px solid green' : '')
-const cssBackgroundColor = props.background
-const cssHover = props.hover
+const theme = {
+  backgroundColor: props.cssHoverColor,
+  hoverColor: props.cssHoverColor
+}
+const cssOutlined = (props.cssOutline ? '1px solid green' : '')
+const cssBackgroundColor = props.cssBackgroundColor
+const cssHoverColor = props.cssHoverColor
 
 const emit = defineEmits(['response'])
 
@@ -24,20 +29,21 @@ onMounted(() => { })
 
 <template>
   <button 
-    class="button" 
-    :outlined="props.outlined" 
+    :class="$style.button" 
+    :outline="props.cssOutline" 
     :text="props.text"
-    :background="props.background"
-    :hover="props.hover">
+    :backgroundColor="props.cssBackgroundColor"
+    :hoverColor="props.cssHoverColor">
 
     {{ props.text }}
     <slot></slot>
   </button>
 </template>
 
-<style scoped>
+<style module>
 /* https://material.io/components/buttons#specs */
 .button {
+    position: absolute;
     background-color: v-bind(cssBackgroundColor);
     color: var(--vt-c-green);
     display: inline-block;
@@ -48,6 +54,6 @@ onMounted(() => { })
 }
 
 .button:hover {
-  background-color: v-bind(cssHover);
+  background-color: v-bind(cssHoverColor);
 }
 </style>

@@ -7,16 +7,14 @@ const props = defineProps({
   text: String,
   cssType: String, // Floating | Raised | Flat 
   cssOutline: Boolean,
+  cssTextColor: String,
   cssBackgroundColor: String,
-  cssHoverColor: String,
+  cssBackgroundColorHover: String,
 })  
-const theme = {
-  backgroundColor: props.cssHoverColor,
-  hoverColor: props.cssHoverColor
-}
 const cssOutlined = (props.cssOutline ? '1px solid green' : '')
+const cssTextColor = props.cssTextColor
 const cssBackgroundColor = props.cssBackgroundColor
-const cssHoverColor = props.cssHoverColor
+const cssBackgroundColorHover = props.cssBackgroundColorHover
 
 const emit = defineEmits(['response'])
 
@@ -31,9 +29,9 @@ onMounted(() => { })
   <button 
     :class="$style.button" 
     :outline="props.cssOutline" 
-    :text="props.text"
-    :backgroundColor="props.cssBackgroundColor"
-    :hoverColor="props.cssHoverColor">
+    :cssTextColor="props.cssTextColor"
+    :cssBackgroundColor="props.cssBackgroundColor"
+    :cssBackgroundColorHover="props.cssBackgroundColorHover">
 
     {{ props.text }}
     <slot class=""></slot>
@@ -43,8 +41,8 @@ onMounted(() => { })
 <style module>
 /* https://material.io/components/buttons#specs */
 .button {
-    background-color: v-bind(cssBackgroundColor);
-    color: var(--vt-c-green);
+    background-color: v-bind(cssBackgroundColor);   
+    color: v-bind(cssTextColor);
     display: inline-block;
     border: v-bind(cssOutlined);
     height: 36px;
@@ -53,6 +51,6 @@ onMounted(() => { })
 }
 
 .button:hover {
-  background-color: v-bind(cssHoverColor);
+  background-color: v-bind(cssBackgroundColorHover);
 }
 </style>

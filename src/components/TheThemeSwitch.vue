@@ -26,27 +26,27 @@ function setTheme(theme: string) {
     
     switch(theme) {
         case 'dark-theme':
-            document.documentElement.style.setProperty('--color-background', 'var(--vt-c-black)');
-            document.documentElement.style.setProperty('--color-background-soft', 'var(--vt-c-black-soft)');
-            document.documentElement.style.setProperty('--color-background-mute', 'var(--vt-c-black-mute)');
+            document.documentElement.style.setProperty('--color-background', 'var(--tv-c-black)');
+            document.documentElement.style.setProperty('--color-background-soft', 'var(--tv-c-black-soft)');
+            document.documentElement.style.setProperty('--color-background-mute', 'var(--tv-c-black-mute)');
 
-            document.documentElement.style.setProperty('--color-border', 'var(--vt-c-divider-dark-2)');
-            document.documentElement.style.setProperty('--color-border-hover', 'var(--vt-c-divider-dark-1)');
+            document.documentElement.style.setProperty('--color-border', 'var(--tv-c-divider-dark-2)');
+            document.documentElement.style.setProperty('--color-border-hover', 'var(--tv-c-divider-dark-1)');
 
-            document.documentElement.style.setProperty('--color-heading', 'var(--vt-c-text-dark-1)');
-            document.documentElement.style.setProperty('--color-text', 'var(--vt-c-text-dark-2)');
+            document.documentElement.style.setProperty('--color-heading', 'var(--tv-c-text-dark-1)');
+            document.documentElement.style.setProperty('--color-text', 'var(--tv-c-text-dark-2)');
 
             break;
         case 'light-theme':
-            document.documentElement.style.setProperty('--color-background', 'var(--vt-c-white)');
-            document.documentElement.style.setProperty('--color-background-soft', 'var(--vt-c-white-soft)');
-            document.documentElement.style.setProperty('--color-background-mute', 'var(--vt-c-white-mute)');
+            document.documentElement.style.setProperty('--color-background', 'var(--tv-c-white)');
+            document.documentElement.style.setProperty('--color-background-soft', 'var(--tv-c-white-soft)');
+            document.documentElement.style.setProperty('--color-background-mute', 'var(--tv-c-white-mute)');
 
-            document.documentElement.style.setProperty('--color-border', 'var(--vt-c-divider-light-2)');
-            document.documentElement.style.setProperty('--color-border-hover', 'var(--vt-c-divider-light-1)');
+            document.documentElement.style.setProperty('--color-border', 'var(--tv-c-divider-light-2)');
+            document.documentElement.style.setProperty('--color-border-hover', 'var(--tv-c-divider-light-1)');
 
-            document.documentElement.style.setProperty('--color-heading', 'var(--vt-c-text-light-1)');
-            document.documentElement.style.setProperty('--color-text', 'var(--vt-c-text-light-1)');            
+            document.documentElement.style.setProperty('--color-heading', 'var(--tv-c-text-light-1)');
+            document.documentElement.style.setProperty('--color-text', 'var(--tv-c-text-light-1)');            
             
             break;
     }

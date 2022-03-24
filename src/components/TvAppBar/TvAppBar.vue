@@ -56,7 +56,7 @@ const showModal = ref(false)
         <div 
             v-if="!minimal" 
             class="tv-appbar-headline">
-            <h2 v-text="props.title" class="tv-appbar-title"></h2>
+            <span v-text="props.title" class="tv-appbar-title"></span>
             <!--
             <TvButton @click="showModal = true">Bug Report</TvButton>
             <TheThemeSwitch />
@@ -65,11 +65,18 @@ const showModal = ref(false)
         <div class="tv-appbar-links">
             <tv-button 
                 text="Home"
-                :cssOutline="true"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
                 cssBackgroundColor=""
-                background="">
+                cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
-            <tv-button text="Project"></tv-button>
+            <tv-button 
+                text="Project"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
+                cssBackgroundColor=""
+                cssBackgroundColorHover="var(--color-background-soft)">
+            </tv-button>
         </div>
         <div class="tv-appbar-interactive">
             <span
@@ -132,12 +139,6 @@ const showModal = ref(false)
     </Teleport>    
 </template>
 
-<style>
-:root {
-    --tv-c-appbar-bg-color: var(--vt-c-black-mute)
-}
-</style>
-
 <style scoped>
 .tv-appbar {
     display: flex;
@@ -148,14 +149,14 @@ const showModal = ref(false)
     height: v-bind(tvAppBarHeight);
     width: v-bind(tvAppBarWidth);
     align-items: center;
-    background-color: var(--tv-c-appbar-bg-color);
-    box-shadow: 0 3px 2px -1px var(--vt-c-vite-yellow);
+    background-color: var(--tv-c-black-mute);
+    box-shadow: 0 3px 2px -1px var(--tv-c-vite-yellow);
     transition: 0.3s ease;  
 }
 .tv-appbar-title {
     margin: 0px; 
     padding: 0px; 
-    color: var(--vt-c-mdc-blue);    
+    color: var(--tv-c-mdc-blue);    
 }
 .tv-appbar-navigation {
     margin-left: 15px;

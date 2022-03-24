@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
-import TvDrawer from "./components/TvDrawer/TvDrawer.vue";
-import TvFooter from "./components/TvFooter/TvFooter.vue";
-import BaseLayout from "./components/BaseLayout.vue";
-import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
+import { RouterView } from "vue-router"
+import TvDrawer from "./components/TvDrawer/TvDrawer.vue"
+import TvFooter from "./components/TvFooter/TvFooter.vue"
+import BaseLayout from "./components/BaseLayout.vue"
+import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue"
 </script>
 
 <template>
@@ -23,6 +23,6 @@ import TvAppBarVue from "./components/TvAppBar/TvAppBar.vue";
   </BaseLayout>
 </template>
 
-<style>
+<style lang="css">
 @import "@/assets/styles/index.css";
 </style>

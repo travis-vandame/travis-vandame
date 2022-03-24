@@ -1,8 +1,18 @@
+/* || General styles */
+
+/* || Typography */
+
+/* || Header and Main Navigation */
+
+/* || Utilities */
+
+/* || Site wide */
 body {
   margin:0;
   line-height: 1.6;
   font-family: sans-serif;
-  font-size: 15px;      
+  font-size: 16px; /* TODO: set to 14px for mobile */
+  font-weight: normal;
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
@@ -11,12 +21,65 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a,.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+h1 {
+  font-size: 96px;
+  font-weight: lighter;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 34px;
+  font-weight: normal; 
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: normal; 
+}
+
+h6 {
+  font-size: 20px;
+  /* TODO: needs weight set to medium for material design */
+}
+
+.subtitle1 {
+  font-size: 16px;
+}
+
+.subtitle2 { 
+  font-size: 14px; 
+  /* TODO: needs weight set to medium for material design */
+}
+
+button {
+  font-size: 14px;
+  /* TODO: needs weight set to medium for material design */
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.overline {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+a {
+  color: var(--tv-c-anchor);
   transition: 0.4s;
 }
 
 a:hover {
-  color: var(--vt-c-mdc-blue);
+  color: var(--tv-c-mdc-blue);
 }

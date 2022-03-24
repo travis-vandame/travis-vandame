@@ -50,14 +50,14 @@
 
 h1 {
   margin: 0px;
-  color: var(--vt-c-vite-yellow)
+  color: var(--tv-c-vite-yellow)
 }
 
 h1 b {
-  color: var(--vt-c-mdc-blue)
+  color: var(--tv-c-mdc-blue)
 }
 
 b {
-  color: var(--vt-c-green)
+  color: var(--tv-c-green)
 }
 </style>

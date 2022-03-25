@@ -123,7 +123,7 @@ function minimize() : boolean {
     margin-left: auto;
 }
 .tv-appbar-icon { 
-    margin-right: 16px;
+    margin-right: 15px;
     font-size: large;
 }
 .tv-appbar-flexbox-break-item {
@@ -158,17 +158,16 @@ function minimize() : boolean {
         height: 225px;
         box-shadow: 1px 1px 3px 1px var(--tv-c-mdc-blue);
     }
-    .tv-appbar-navigation { 
+    .tv-appbar-navigation {
         padding-top: 15px;
-        padding-bottom: 15px;
         font-size: x-large;
     }
     .tv-appbar-headline {
         display: none;
     }
     .tv-appbar-icon {
+        padding-top: 15px;
         padding-left: 15px;
-        padding-bottom: 12px;
         font-size: x-large;
      }
 

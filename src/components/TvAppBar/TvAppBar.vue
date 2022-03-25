@@ -112,15 +112,8 @@ const showModal = ref(false)
             <div
                 v-show="!collapsed" 
                 class="tv-appbar-system-information">
-
-                <TvSwitch
-                    id="travis"
-                    labelTextDisabled="Day Mode" 
-                    labelTextEnabled="Night Mode"
-                    :showLabel="false"
-                    :disabled="false" />
                                     
-                <span>W: {{ windowWidth }} H: {{ windowHeight }}</span>
+                <span>Screen W: {{ windowWidth }} H: {{ windowHeight }}</span>
             </div>
         </Transition>
     </div>

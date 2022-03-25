@@ -105,12 +105,12 @@ function minimize() : boolean {
     width: v-bind(width);
     align-items: center;
     background-color: var(--tv-c-black-mute);
-    box-shadow: 1px 1px 3px 1px var(--tv-c-mdc-blue);
+    box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
 }
 .tv-appbar-title {
     margin: 0px; 
     padding: 0px; 
-    color: var(--tv-c-mdc-blue);    
+    color: var(--tv-c-white-mute);    
 }
 .tv-appbar-navigation {
     margin: 0px 15px 0px 15px;

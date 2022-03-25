@@ -9,7 +9,7 @@ const height = computed(() => {
 })
 
 const width = computed(() => {
-    return isMinimal.value ? '200px' : '100%' 
+    return isMinimal.value ? '195px' : '100%' 
 })
 
 const props = withDefaults(defineProps<{
@@ -45,11 +45,11 @@ function minimize() : boolean {
 
             <h6 v-text="props.title" class="tv-appbar-title"></h6>
         </div>
-        <div class="tv-appbar-links">
-            <slot 
-                v-if="!isMinimal"
-                name="links">
-            </slot>
+        <div 
+            v-if="!isMinimal"
+            class="tv-appbar-links">
+
+            <slot name="links"></slot>
         </div>
         <div class="tv-appbar-icon">
 
@@ -86,6 +86,7 @@ function minimize() : boolean {
         <div
             v-if="!isCollapsed" 
             class="tv-appbar-menu">
+
             <slot 
                 name="menu">
             </slot>
@@ -104,7 +105,7 @@ function minimize() : boolean {
     width: v-bind(width);
     align-items: center;
     background-color: var(--tv-c-black-mute);
-    box-shadow: 0 3px 2px -1px var(--tv-c-mdc-blue);
+    box-shadow: 1px 1px 3px 1px var(--tv-c-mdc-blue);
 }
 .tv-appbar-title {
     margin: 0px; 
@@ -156,7 +157,7 @@ function minimize() : boolean {
         flex-direction: column;
         width: 55px;
         height: 225px;
-        box-shadow: 2px 3px 2px -1px var(--tv-c-mdc-blue);
+        box-shadow: 1px 1px 3px 1px var(--tv-c-mdc-blue);
     }
     .tv-appbar-navigation { 
         padding-top: 15px;
@@ -178,7 +179,6 @@ function minimize() : boolean {
     .tv-appbar-menu {
         width: 100%;
         padding: 15px;
-        box-shadow: 2px 3px 2px -1px var(--tv-c-mdc-blue);
         background-color: var(--tv-c-black-mute);
     }
 }

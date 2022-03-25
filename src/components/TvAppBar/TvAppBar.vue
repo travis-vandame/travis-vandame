@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<{
   labelTextDisabled: string
 }>(), {
   id: 'default',
-  title: 'T-App Development',
+  title: 'Travis VanDame',
   disabled: false,
   isActive: false,
   showLabel: true,
@@ -45,18 +45,16 @@ const showModal = ref(false)
 
 <template>
     <div class="tv-appbar">
-
         <div class="tv-appbar-navigation">
-            <span
-                class="collapse-icon"
-                :class="{ 'rotate-180': collapsed }">            
-                <font-awesome-icon :icon="['fas', 'bars']" />
-            </span>
+            <font-awesome-icon
+                size="lg" 
+                color="var(--tv-c-mdc-blue)"             
+                :icon="['fas', 'bars']" />
         </div>
         <div 
             v-if="!minimal" 
             class="tv-appbar-headline">
-            <span v-text="props.title" class="tv-appbar-title"></span>
+            <h6 v-text="props.title" class="tv-appbar-title"></h6>
             <!--
             <TvButton @click="showModal = true">Bug Report</TvButton>
             <TheThemeSwitch />
@@ -80,29 +78,31 @@ const showModal = ref(false)
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
         </div>
-        <div class="tv-appbar-interactive">
-            <span
-                class="collapse-icon"
-                :class="{ 'rotate-180': collapsed }">
-                <font-awesome-icon :icon="['fab', 'linkedin']" />
-            </span>
-            <span
-                class="collapse-icon"
-                :class="{ 'rotate-180': collapsed }">            
-                <font-awesome-icon :icon="['fab', 'github']" />
-            </span>
-            <span
-                class="collapse-icon"
-                :class="{ 'rotate-180': collapsed }"
-                @click="toggleTvAppBar">
-                <font-awesome-icon :icon="['fas', 'gear']" />            
-            </span>
-            <span
-                class="collapse-icon"
-                :class="{ 'rotate-180': collapsed }"
-                @click="toggleTvAppBarMinimal">
-                <font-awesome-icon :icon="['fas', 'minimize']" />            
-            </span>                        
+        <div class="tv-appbar-icon">
+            <font-awesome-icon
+                :icon="['fab', 'linkedin']"
+                size="lg" 
+                color="var(--tv-c-mdc-blue)" />
+        </div>
+        <div class="tv-appbar-icon">
+            <font-awesome-icon 
+                :icon="['fab', 'github']" 
+                size="lg" 
+                color="var(--tv-c-mdc-blue)" />
+        </div>
+        <div class="tv-appbar-icon">
+            <font-awesome-icon
+                @click="toggleTvAppBar"
+                :icon="['fas', 'gear']" 
+                size="lg" 
+                color="var(--tv-c-mdc-blue)" />
+        </div>
+        <div class="tv-appbar-icon">
+            <font-awesome-icon
+                @click="toggleTvAppBarMinimal"
+                :icon="['fas', 'minimize']"
+                size="lg" 
+                color="var(--tv-c-mdc-blue)" />
         </div>
         <div class="tv-appbar-overflow">
 
@@ -120,7 +120,7 @@ const showModal = ref(false)
                     :showLabel="false"
                     :disabled="false" />
                                     
-                W: {{ windowWidth }} H: {{ windowHeight }} 
+                <span>W: {{ windowWidth }} H: {{ windowHeight }}</span>
             </div>
         </Transition>
     </div>
@@ -152,7 +152,7 @@ const showModal = ref(false)
     width: v-bind(tvAppBarWidth);
     align-items: center;
     background-color: var(--tv-c-black-mute);
-    box-shadow: 0 3px 2px -1px var(--tv-c-vite-yellow);
+    box-shadow: 0 3px 2px -1px var(--tv-c-mdc-blue);
     transition: 0.3s ease;  
 }
 .tv-appbar-title {
@@ -161,7 +161,7 @@ const showModal = ref(false)
     color: var(--tv-c-mdc-blue);    
 }
 .tv-appbar-navigation {
-    margin-left: 15px;
+    margin: 0px 15px 0px 15px;
 }
 .tv-appbar-headline {
     margin-left: 24px;
@@ -169,8 +169,8 @@ const showModal = ref(false)
 .tv-appbar-links {
     margin-left: auto;
 }
-.tv-appbar-interactive { 
-
+.tv-appbar-icon { 
+    margin-right: 15px
 }
 .tv-appbar-overflow {
     margin-right: 24px;
@@ -184,74 +184,45 @@ const showModal = ref(false)
     margin-right: 24px;
     transition: 0.3s ease;
 }
-.collapse-icon {
-    /* position: absolute; */
-    /* bottom: 0;*/
-    padding: 0.75em;
-    color: rgba(255, 255, 255, 0.7);
-    transition: 0.2s linear;
-}
-.rotate-180 {
-    transform: rotate(80deg);
-    transform: 0.2s linear;
-}
-.v-enter-active, .v-leave-active {
-    transition: opacity 0.3s ease;
-}
-.v-enter-from, .v-leave-to {
-  opacity: 0;
-}
-@media (max-width: 480px) {
-    .tv-appbar {
-        flex-basis: auto;
-        flex-direction: column;
-        justify-content: flex-end;
-        width: v-bind(tvAppBarWidth);
-        height: v-bind(tvAppBarHeight);
-        height: auto;
-    }
-    .tv-appbar-title, h2 {
-        font-size: medium;
-    }
-    .tv-appbar-navigation {
-        display: none;
-    }
-    .tv-appbar-headline {
-        display: none;
-    }
-    .tv-appbar-links { 
-
-    }
-    .tv-appbar-interactive {
-        order: -1;
-    }
-    .tv-appbar-interactive, span, font-awesome-icon {
-        margin-right:auto;
-        font-size: xx-large;
-    }
-    .tv-appbar-overflow {
-        margin-left: auto;
-    }
-    .tv-appbar-flexbox-break-item { }
-
-    .tv-appbar-system-information { 
-        padding: 0px;
-        margin: 0px;
-
-    }
-}
 @media (max-width: 600px) {
     .tv-appbar {
         width: v-bind(tvAppBarWidth);
         height: v-bind(tvAppBarHeight);
-        height: auto;
-    }    
+    }
+    .tv-appbar-headline {
+        margin-right: 24px;
+    }
     .tv-appbar-links {
-        margin-right: 30px; 
-        order: 3
+        display: none;
     }
     .tv-appbar-interactive { 
         margin-left: auto;
+    }
+}
+@media (max-width: 480px) {
+    .tv-appbar {
+        flex-direction: column;
+        width: 55px;
+        height: 275px;
+        box-shadow: 2px 3px 2px -1px var(--tv-c-mdc-blue);
+    }
+    .tv-appbar-navigation { 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: x-large;
+    }
+    .tv-appbar-headline {
+        display: none;
+    }
+    .tv-appbar-icon {
+        padding-bottom: 12px;
+        font-size: x-large;
+     }
+    .tv-appbar-system-information {
+        width: 100%;
+        padding: 15px;
+        box-shadow: 2px 3px 2px -1px var(--tv-c-mdc-blue);
+        background-color: var(--tv-c-black-mute);
     }
 }
 </style>

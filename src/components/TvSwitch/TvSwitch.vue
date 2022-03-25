@@ -3,7 +3,7 @@ const props = withDefaults(defineProps<{
   id?: string
   isActive?: boolean
   disabled?: boolean
-  defaultState: boolean
+  defaultState?: boolean
   labelTextEnabled: string
   labelTextDisabled: string
 }>(), {

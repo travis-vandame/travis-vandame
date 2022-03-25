@@ -156,7 +156,7 @@ function minimize() : boolean {
         flex-direction: column;
         width: 55px;
         height: 225px;
-        box-shadow: 1px 1px 3px 1px var(--tv-c-mdc-blue);
+        box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
     }
     .tv-appbar-navigation {
         padding-top: 15px;

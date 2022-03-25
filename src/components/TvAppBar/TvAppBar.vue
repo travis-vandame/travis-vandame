@@ -9,7 +9,7 @@ const height = computed(() => {
 })
 
 const width = computed(() => {
-    return isMinimal.value ? '195px' : '100%' 
+    return isMinimal.value ? '205px' : '100%' 
 })
 
 const props = withDefaults(defineProps<{
@@ -34,6 +34,7 @@ function minimize() : boolean {
 <template>
     <div class="tv-appbar">
         <div class="tv-appbar-navigation">
+
             <font-awesome-icon
                 size="lg" 
                 color="var(--tv-c-mdc-blue)"             
@@ -113,6 +114,7 @@ function minimize() : boolean {
 }
 .tv-appbar-navigation {
     margin: 0px 15px 0px 15px;
+    font-size: large;
 }
 .tv-appbar-headline {
     margin-left: 24px;
@@ -121,7 +123,8 @@ function minimize() : boolean {
     margin-left: auto;
 }
 .tv-appbar-icon { 
-    margin-right: 16px
+    margin-right: 16px;
+    font-size: large;
 }
 .tv-appbar-flexbox-break-item {
     flex-basis: 100%; /* Things that make you think. TJV :P */
@@ -164,7 +167,7 @@ function minimize() : boolean {
         display: none;
     }
     .tv-appbar-icon {
-        padding-left: 14px;
+        padding-left: 15px;
         padding-bottom: 12px;
         font-size: x-large;
      }

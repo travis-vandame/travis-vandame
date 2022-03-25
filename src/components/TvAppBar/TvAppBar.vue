@@ -127,7 +127,7 @@ const showModal = ref(false)
             <tv-display></tv-display>
         </div>            
     </div>
-    
+
     <Teleport to="body">
         <!-- use the modal component, pass in the prop -->
         <TvModal :isActive="showModal" @close="showModal = false">
@@ -184,7 +184,6 @@ const showModal = ref(false)
 .tv-appbar-system-information {
     margin-left: auto;
     margin-right: 24px;
-    transition: 0.3s ease;
 }
 @media (max-width: 800px) {
     .tv-appbar-headline {

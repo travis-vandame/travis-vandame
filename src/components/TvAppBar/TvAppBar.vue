@@ -37,7 +37,7 @@ function minimize() : boolean {
 
             <font-awesome-icon
                 size="lg" 
-                color="var(--tv-c-mdc-blue)"             
+                color="var(--tv-c-anchor-green)"             
                 :icon="['fa-brands', 'vuejs']" />
         </div>
         <div 
@@ -57,14 +57,14 @@ function minimize() : boolean {
             <font-awesome-icon
                 :icon="['fab', 'linkedin']"
                 size="lg" 
-                color="var(--tv-c-mdc-blue)" />
+                color="var(--tv-c-white-mute)" />
         </div>
         <div class="tv-appbar-icon">
 
             <font-awesome-icon 
                 :icon="['fab', 'github']" 
                 size="lg" 
-                color="var(--tv-c-mdc-blue)" />
+                color="var(--tv-c-white-mute)" />
         </div>
         <div class="tv-appbar-icon button-settings">
 
@@ -72,7 +72,7 @@ function minimize() : boolean {
                 @click="collapse"
                 :icon="['fas', 'gear']" 
                 size="lg" 
-                color="var(--tv-c-mdc-blue)" />
+                color="var(--tv-c-white-mute)" />
         </div>
         <div class="tv-appbar-icon button-minimal">
 
@@ -80,7 +80,7 @@ function minimize() : boolean {
                 @click="minimize"
                 :icon="['fas', 'minimize']"
                 size="lg" 
-                color="var(--tv-c-mdc-blue)" />
+                color="var(--tv-c-white-mute)" />
         </div>
         <div class="tv-appbar-flexbox-break-item"></div>
         <div
@@ -114,7 +114,7 @@ function minimize() : boolean {
 }
 .tv-appbar-navigation {
     margin: 0px 15px 0px 15px;
-    font-size: large;
+    font-size: x-large;
 }
 .tv-appbar-headline {
     margin-left: 24px;

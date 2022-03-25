@@ -16,7 +16,7 @@ const emit = defineEmits<{
         <img
             alt="Vite logo"
             class="logo"
-            src="@/assets/vite-logo.svg"
+            src="@/assets/images/vite-logo.svg"
             width="100"
             height="100"
         />    
@@ -25,7 +25,7 @@ const emit = defineEmits<{
         <img
             alt="Vue logo"
             class="logo"
-            src="@/assets/vue-logo.svg"
+            src="@/assets/images/vue-logo.svg"
             width="100"
             height="100"
         />
@@ -59,7 +59,7 @@ const emit = defineEmits<{
         <img
             alt="GitHub logo"
             class="logo"
-            src="@/assets/octocat-logo.png"
+            src="@/assets/images/octocat-logo.png"
             width="100"
             height="100"
         />

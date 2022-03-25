@@ -62,7 +62,9 @@ const showModal = ref(false)
             <TheThemeSwitch />
             -->
         </div>
-        <div class="tv-appbar-links">
+        <div 
+            v-if="!minimal"
+            class="tv-appbar-links">
             <tv-button 
                 text="Home"
                 :cssOutline="false"

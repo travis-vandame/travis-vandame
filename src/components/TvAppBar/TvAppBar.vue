@@ -169,7 +169,9 @@ const showModal = ref(false)
 .tv-appbar-links {
     margin-left: auto;
 }
-.tv-appbar-interactive { }
+.tv-appbar-interactive { 
+
+}
 .tv-appbar-overflow {
     margin-right: 24px;
 }

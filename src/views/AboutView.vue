@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheArticle from "@/components/article/TheArticle.vue";
+import TvArticle from "@/components/TvArticle/TvArticle.vue";
 </script>
 
 <template>
-  <TheArticle />
+  <tv-article></tv-article>
 </template>
 
 <style scoped></style>

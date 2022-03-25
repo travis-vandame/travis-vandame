@@ -13,7 +13,6 @@ const emit = defineEmits<{
 <template>
     <div class="tv-app-wrapper">
         <header class="tv-app-header">
-            <!-- @slot Site header -->
             <slot name="header"></slot>
         </header>
         <article class="tv-app-article">

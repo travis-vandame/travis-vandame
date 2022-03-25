@@ -49,7 +49,7 @@ const showModal = ref(false)
             <font-awesome-icon
                 size="lg" 
                 color="var(--tv-c-mdc-blue)"             
-                :icon="['fas', 'bars']" />
+                :icon="['fa-brands', 'vuejs']" />
         </div>
         <div 
             v-if="!minimal" 

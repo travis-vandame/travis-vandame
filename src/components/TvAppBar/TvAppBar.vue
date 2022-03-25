@@ -90,14 +90,14 @@ const showModal = ref(false)
                 size="lg" 
                 color="var(--tv-c-mdc-blue)" />
         </div>
-        <div class="tv-appbar-icon">
+        <div class="tv-appbar-icon button-settings">
             <font-awesome-icon
                 @click="toggleTvAppBar"
                 :icon="['fas', 'gear']" 
                 size="lg" 
                 color="var(--tv-c-mdc-blue)" />
         </div>
-        <div class="tv-appbar-icon">
+        <div class="tv-appbar-icon button-minimal">
             <font-awesome-icon
                 @click="toggleTvAppBarMinimal"
                 :icon="['fas', 'minimize']"
@@ -203,7 +203,7 @@ const showModal = ref(false)
     .tv-appbar {
         flex-direction: column;
         width: 55px;
-        height: 275px;
+        height: 225px;
         box-shadow: 2px 3px 2px -1px var(--tv-c-mdc-blue);
     }
     .tv-appbar-navigation { 
@@ -217,6 +217,10 @@ const showModal = ref(false)
     .tv-appbar-icon {
         padding-bottom: 12px;
         font-size: x-large;
+     }
+
+     .button-minimal {
+         display: none;
      }
     .tv-appbar-system-information {
         width: 100%;

@@ -71,6 +71,20 @@ const showModal = ref(false)
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
             <tv-button 
+                text="Article"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
+                cssBackgroundColor=""
+                cssBackgroundColorHover="var(--color-background-soft)">
+            </tv-button>
+            <tv-button 
+                text="Changelog"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
+                cssBackgroundColor=""
+                cssBackgroundColorHover="var(--color-background-soft)">
+            </tv-button>                        
+            <tv-button 
                 text="Project"
                 :cssOutline="false"
                 cssTextColor="var(--tv-c-anchor-green)"
@@ -176,6 +190,11 @@ const showModal = ref(false)
     margin-left: auto;
     margin-right: 24px;
     transition: 0.3s ease;
+}
+@media (max-width: 800px) {
+    .tv-appbar-headline {
+        display: none;
+    }
 }
 @media (max-width: 600px) {
     .tv-appbar {

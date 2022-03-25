@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TvLayout from './TvLayout/TvLayout.vue'
 import TvAppBar from './TvAppBar/TvAppBar.vue'
+import TvArticle from './TvArticle/TvArticle.vue'
 import TvFooter from './TvFooter/TvFooter.vue'
 import TvDrawer from './TvDrawer/TvDrawer.vue'
 </script>
@@ -9,6 +10,9 @@ import TvDrawer from './TvDrawer/TvDrawer.vue'
   <TvLayout>
     <template v-slot:header>
       <TvAppBar />
+    </template>
+    <template v-slot:article>
+      <tv-article />
     </template>
     <template v-slot:footer>
       <TvFooter />

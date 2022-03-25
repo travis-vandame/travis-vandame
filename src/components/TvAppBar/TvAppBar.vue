@@ -81,7 +81,6 @@ function minimize() : boolean {
                 size="lg" 
                 color="var(--tv-c-mdc-blue)" />
         </div>
-        <div class="tv-appbar-overflow"></div>
         <div class="tv-appbar-flexbox-break-item"></div>
         <div
             v-if="!isCollapsed" 
@@ -122,10 +121,7 @@ function minimize() : boolean {
     margin-left: auto;
 }
 .tv-appbar-icon { 
-    margin-right: 15px
-}
-.tv-appbar-overflow {
-    margin-right: 24px;
+    margin-right: 16px
 }
 .tv-appbar-flexbox-break-item {
     flex-basis: 100%; /* Things that make you think. TJV :P */
@@ -133,7 +129,7 @@ function minimize() : boolean {
 }
 .tv-appbar-menu {
     margin-left: auto;
-    margin-right: 24px;
+    margin-right: 16px;
 }
 @media (max-width: 800px) {
     .tv-appbar-headline {

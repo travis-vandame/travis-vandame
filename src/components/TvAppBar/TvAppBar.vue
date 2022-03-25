@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useWindow } from '../../composables/window'
+import TvDisplay from '../TvDisplay/TvDisplay.vue'
 import TvButton from '../TvButton/TvButton.vue';
 import TvModal from '../TvModal/TvModal.vue'
 import { 
@@ -120,14 +121,11 @@ const showModal = ref(false)
 
         </div>
         <div class="tv-appbar-flexbox-break-item"></div>
-        <transition>
-            <div
-                v-show="!collapsed" 
-                class="tv-appbar-system-information">
-                                    
-                <span>Screen W: {{ windowWidth }} H: {{ windowHeight }}</span>
-            </div>
-        </transition>
+        <div
+            v-show="!collapsed" 
+            class="tv-appbar-system-information">
+            <tv-display></tv-display>
+        </div>            
     </div>
     
     <Teleport to="body">
@@ -224,6 +222,7 @@ const showModal = ref(false)
         display: none;
     }
     .tv-appbar-icon {
+        padding-left: 14px;
         padding-bottom: 12px;
         font-size: x-large;
      }

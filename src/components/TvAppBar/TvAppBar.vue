@@ -2,9 +2,7 @@
 import { ref } from 'vue'
 import { useWindow } from '../../composables/window'
 import TvButton from '../TvButton/TvButton.vue';
-import TvSwitch from '../TvSwitch/TvSwitch.vue';
 import TvModal from '../TvModal/TvModal.vue'
-import TheThemeSwitch from '../TheThemeSwitch.vue'
 import { 
     collapsed, 
     minimal, 

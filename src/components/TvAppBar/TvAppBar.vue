@@ -122,14 +122,14 @@ const showModal = ref(false)
 
         </div>
         <div class="tv-appbar-flexbox-break-item"></div>
-        <Transition>
+        <transition>
             <div
                 v-show="!collapsed" 
                 class="tv-appbar-system-information">
                                     
                 <span>Screen W: {{ windowWidth }} H: {{ windowHeight }}</span>
             </div>
-        </Transition>
+        </transition>
     </div>
     
     <Teleport to="body">
@@ -160,7 +160,6 @@ const showModal = ref(false)
     align-items: center;
     background-color: var(--tv-c-black-mute);
     box-shadow: 0 3px 2px -1px var(--tv-c-mdc-blue);
-    transition: 0.3s ease;  
 }
 .tv-appbar-title {
     margin: 0px; 

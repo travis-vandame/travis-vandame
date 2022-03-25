@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, useCssModule } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
-useCssModule('button')
 
 const props = defineProps({
   text: String,
@@ -27,19 +25,13 @@ const cssOutlined = (props.cssOutline ? '1px solid green' : '')
 const cssTextColor = props.cssTextColor
 const cssBackgroundColor = isActive ? props.cssBackgroundColorHover : props.cssBackgroundColor
 const cssBackgroundColorHover = props.cssBackgroundColorHover
-
-// Lifecycle Hooks
-onMounted(() => { })
-
-// Watchers
-// watch(count, (newCount, oldCount) => { })
 </script>
 
 <template>
     <component 
       :is="isType" 
       :to="props.to"
-      :class="$style.button" 
+      class=".button btn" 
       :outline="props.cssOutline" 
       :cssTextColor="props.cssTextColor"
       :cssBackgroundColor="props.cssBackgroundColor"
@@ -50,7 +42,7 @@ onMounted(() => { })
     </component>
 </template>
 
-<style module>
+<style scoped>
 /* https://material.io/components/buttons#specs */
 .button {
     background-color: v-bind(cssBackgroundColor);   

@@ -28,22 +28,22 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
                 cssBackgroundColor=""
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
-            <!--
-          <tv-button 
-              text="Changelog"
-              :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor=""
-              cssBackgroundColorHover="var(--color-background-soft)">
-          </tv-button>                        
-          <tv-button 
-              text="Project"
-              :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor=""
-              cssBackgroundColorHover="var(--color-background-soft)">
-          </tv-button>
-          -->
+            <tv-button 
+                text="Changelog"
+                to="changelog"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
+                cssBackgroundColor=""
+                cssBackgroundColorHover="var(--color-background-soft)">
+            </tv-button>                        
+            <tv-button 
+                text="Project"
+                to="project"
+                :cssOutline="false"
+                cssTextColor="var(--tv-c-anchor-green)"
+                cssBackgroundColor=""
+                cssBackgroundColorHover="var(--color-background-soft)">
+            </tv-button>
           </template>          
           <template v-slot:menu>
               <tv-display></tv-display>

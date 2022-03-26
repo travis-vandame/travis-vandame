@@ -17,31 +17,31 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
                 to="/home"
                 :cssOutline="false"
                 cssTextColor="var(--tv-c-anchor-green)"
-                cssBackgroundColor=""
+                cssBackgroundColor="var(--tv-c-black-mute)"
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
             <tv-button 
-                text="Article"
+                text="About"
                 to="/about"
                 :cssOutline="false"
                 cssTextColor="var(--tv-c-anchor-green)"
-                cssBackgroundColor=""
+                cssBackgroundColor="var(--tv-c-black-mute)"
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
             <tv-button 
                 text="Changelog"
-                to="changelog"
+                to="/changelog"
                 :cssOutline="false"
                 cssTextColor="var(--tv-c-anchor-green)"
-                cssBackgroundColor=""
+                cssBackgroundColor="var(--tv-c-black-mute)"
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>                        
             <tv-button 
                 text="Project"
-                to="project"
+                to="/project"
                 :cssOutline="false"
                 cssTextColor="var(--tv-c-anchor-green)"
-                cssBackgroundColor=""
+                cssBackgroundColor="var(--tv-c-black-mute)"
                 cssBackgroundColorHover="var(--color-background-soft)">
             </tv-button>
           </template>          
@@ -64,30 +64,7 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
     </template>            
   </tv-layout>
 </template>
-<!--
 
-<BaseLayout>
-    <template v-slot:app-bar>
-      <TvAppBarVue />
-    </template>
-    <template v-slot:navigation-drawer>
-      <TvDrawer />
-    </template>
-    <template v-slot:article>
-      <router-link to="/about">Go to About</router-link>
-      <router-link to="/about">Go to About</router-link>
-      <router-link to="/about">Go to About</router-link>
-      <router-link to="/about">Go to About</router-link>
-
-      <router-view></router-view>
-      <router-link to="/about">Go to About</router-link>
-    </template>
-    <template v-slot:footer>
-      <TvFooter />
-    </template>
-  </BaseLayout>
-</template>
--->
-<style lang="css">
+<style>
 @import "@/assets/styles/index.css";
 </style>

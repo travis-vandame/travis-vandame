@@ -31,7 +31,8 @@ const cssBackgroundColorHover = props.cssBackgroundColorHover
     <component 
       :is="isType" 
       :to="props.to"
-      class=".button btn" 
+      tag="button"
+      class="button" 
       :outline="props.cssOutline" 
       :cssTextColor="props.cssTextColor"
       :cssBackgroundColor="props.cssBackgroundColor"
@@ -52,9 +53,31 @@ const cssBackgroundColorHover = props.cssBackgroundColorHover
     height: 36px;
     min-width: 64px;
     padding: 0px 16px 0px 16px;
+    text-transform: uppercase;
 }
 
 .button:hover {
   background-color: v-bind(cssBackgroundColorHover);
+}
+
+a:link, a:visited {
+    background-color: v-bind(cssBackgroundColor);
+    color: v-bind(cssTextColor);
+    border: v-bind(cssOutlined);
+    height: 36px;
+    min-width: 64px;
+    padding: 0px 16px 0px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display:table-cell; 
+    vertical-align:middle; 
+    text-align:center;
+}
+
+a:hover::before {
+  background-color: red;
 }
 </style>

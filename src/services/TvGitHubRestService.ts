@@ -27,7 +27,7 @@ interface ITvGitHubRepoOwner {
     site_admin: boolean
 }
 
-interface ITvGitHubOwnerRepos{
+interface ITvGitHubUsernameRepos{
     id: number
     node_id: string
     name: string
@@ -108,6 +108,12 @@ interface ITvGitHubOwnerRepos{
 }
 
 export abstract class TvGitHubRestApi {
+    /**
+     * 
+     * @param owner 
+     * @param repo 
+     * @returns 
+     */
     static async fetchRepoLanguages(owner: string, repo: string): Promise<ITvGitHubRepoLanguages>{
         let url = `https://api.github.com/repos/${owner}/${repo}/languages`
         const response = await fetch(url)
@@ -116,8 +122,13 @@ export abstract class TvGitHubRestApi {
         return data
     }
 
-    static async fetchOwnerRepos(owner: string): Promise<ITvGitHubOwnerRepos[]>{
-        let url = `https://api.github.com/users/${owner}}/repos`
+    /**
+     * 
+     * @param owner 
+     * @returns 
+     */
+    static async fetchUsernameRepos(username: string): Promise<ITvGitHubUsernameRepos[]>{
+        let url = `https://api.github.com/users/${username}/repos`
         const response = await fetch(url)
         const data = await response.json()
         

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { TvGitHubRestApi } from '../services/TvGitHubRestService'
 
-async function fetchGetHubOwnerRepos(owner: string) {
-  const data = await TvGitHubRestApi.fetchOwnerRepos(owner)
+async function fetchGitHubRepos(owner: string) {
+  const data = await TvGitHubRestApi.fetchUsernameRepos(owner)
 
-  console.log(data[0].owner)
+  console.log(data)
 }
 </script>
 
@@ -12,7 +12,7 @@ async function fetchGetHubOwnerRepos(owner: string) {
   <div class="container">
     <div class="logo">
       <div class="logo-item">
-        <span class="letter-t">T</span>      
+        <span class="letter-t" @click="fetchGitHubRepos('travis-vandame')">T</span>      
         <span class="letter-v">V</span>
         <span>
           <div class="title">

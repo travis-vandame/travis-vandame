@@ -1,4 +1,12 @@
-interface IGitHubReposOwner {
+interface ITvGitHubRepoLanguages{
+    Vue: number
+    CSS: number
+    TypeScript: number
+    HTML: number
+    JavaScript: number
+}
+
+interface ITvGitHubRepoOwner {
     login: string
     id: number
     node_id: string
@@ -19,13 +27,13 @@ interface IGitHubReposOwner {
     site_admin: boolean
 }
 
-interface IGitHubReposApi{
+interface ITvGitHubOwnerRepos{
     id: number
     node_id: string
     name: string
     full_name: string
     private: string
-    owner: IGitHubReposOwner 
+    owner: ITvGitHubRepoOwner 
     html_url: string
     description: string
     fork: boolean
@@ -99,27 +107,17 @@ interface IGitHubReposApi{
     default_branch: string    
 }
 
-interface IGitHubRepoLanguagesApi{
-    Vue: number
-    CSS: number
-    TypeScript: number
-    HTML: number
-    JavaScript: number
-}
-
-export abstract class GitHubUserRepoApi {
-    static async fetchUserRepos(user: string): Promise<IGitHubReposApi[]>{
-        let url = `https://api.github.com/users/${user}/repos`
+export abstract class TvGitHubRestApi {
+    static async fetchRepoLanguages(owner: string, repo: string): Promise<ITvGitHubRepoLanguages>{
+        let url = `https://api.github.com/repos/${owner}/${repo}/languages`
         const response = await fetch(url)
         const data = await response.json()
         
         return data
     }
-}
 
-export abstract class GitHubUserLanguagesApi {
-    static async fetchRepoLanguages(user: string, repository: string): Promise<IGitHubRepoLanguagesApi>{
-        let url = `https://api.github.com/repos/${user}/${repository}/languages`
+    static async fetchOwnerRepos(owner: string): Promise<ITvGitHubOwnerRepos[]>{
+        let url = `https://api.github.com/users/${owner}}/repos`
         const response = await fetch(url)
         const data = await response.json()
         

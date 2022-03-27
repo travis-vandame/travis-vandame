@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { GitHubUserRepoApi } from '../services/TvGitHubDataService'
+import { TvGitHubRestApi } from '../services/TvGitHubRestService'
 
-let repos = ref('')
-
-async function getIt() {
-  const data = await GitHubUserRepoApi.fetchUserRepos('travis-vandame')
+async function fetchGetHubOwnerRepos(owner: string) {
+  const data = await TvGitHubRestApi.fetchOwnerRepos(owner)
 
   console.log(data[0].owner)
 }

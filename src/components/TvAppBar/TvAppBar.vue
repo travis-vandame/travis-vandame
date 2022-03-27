@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import TvLink from '../TvLink/TvLink.vue';
 
 const isCollapsed = ref(true)
 const isMinimal = ref(false)
@@ -34,11 +35,12 @@ function minimize() : boolean {
 <template>
     <div class="tv-appbar">
         <div class="tv-appbar-navigation">
-
-            <font-awesome-icon
-                size="lg" 
-                color="var(--tv-c-anchor-green)"             
-                :icon="['fa-brands', 'vuejs']" />
+            <tv-link to="http://travis-vandame/github.io">
+                <font-awesome-icon
+                    size="lg" 
+                    color="var(--tv-c-anchor-green)"             
+                    :icon="['fa-brands', 'vuejs']" />
+            </tv-link>
         </div>
         <div 
             v-if="!isMinimal" 
@@ -53,18 +55,21 @@ function minimize() : boolean {
             <slot name="links"></slot>
         </div>
         <div class="tv-appbar-icon">
-
-            <font-awesome-icon
-                :icon="['fab', 'linkedin']"
-                size="lg" 
-                color="var(--tv-c-white-mute)" />
+            
+            <TvLink to="http://www.linkedin.com/in/tvandame">
+                <font-awesome-icon
+                    :icon="['fab', 'linkedin']"
+                    size="lg" 
+                    color="var(--tv-c-white-mute)" />
+            </TvLink>                
         </div>
         <div class="tv-appbar-icon">
-
-            <font-awesome-icon 
-                :icon="['fab', 'github']" 
-                size="lg" 
-                color="var(--tv-c-white-mute)" />
+            <tv-link to="http://github.com/travis-vandame">
+                <font-awesome-icon 
+                    :icon="['fab', 'github']" 
+                    size="lg" 
+                    color="var(--tv-c-white-mute)" />
+            </tv-link>
         </div>
         <div class="tv-appbar-icon button-settings">
 

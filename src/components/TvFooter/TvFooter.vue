@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import TvLink from '../TvLink/TvLink.vue'
 
 const props = defineProps({
   isFixed: Boolean,
@@ -10,15 +11,18 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
 <template>
   <div class="made-with">
     <div class="vite">
+      <tv-link to="http://www.vitejs.dev">
         <img
             alt="Vite logo"
             class="logo"
             src="@/assets/images/vite-logo.svg"
             width="60"
             height="60"
-        />    
+        />
+      </tv-link>            
     </div>
     <div class="vue">
+      <tv-link to="http://vuejs.org/">
         <img
             alt="Vue logo"
             class="logo"
@@ -26,8 +30,10 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
             width="60"
             height="60"
         />
+      </tv-link>        
     </div>      
     <div class="mdn">
+      <tv-link to="https://developer.mozilla.org/">
         <svg 
             id="mdn-logo" 
             width="100"
@@ -52,8 +58,10 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
                 <path d="M286.4,72.8h-19.3v-5.5h6V51.5c0-3.7-0.7-6.3-2.2-7.9c-1.4-1.6-3.4-2.3-5.7-2.3c-3.1,0-5.6,1-7.4,3c-1.8,2-2.8,4.4-2.9,7 v15.9h6v5.5h-19.3v-5.5h6V42h-6.2v-5.6h13.6v6.2c2.6-4.6,6.8-6.9,12.7-6.9c3.6,0,6.7,1.1,9.2,3.3c2.5,2.2,3.7,5.6,3.7,10.2v18.2 h6V72.8z"></path>
             </g>
         </svg>
+      </tv-link>
     </div>
     <div class="github">
+      <tv-link to="http://www.github.com">
         <img
             alt="GitHub logo"
             class="logo"
@@ -61,6 +69,7 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
             width="60"
             height="60"
         />
+      </tv-link>
     </div>
   </div>
 </template>

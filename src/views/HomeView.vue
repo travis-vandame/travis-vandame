@@ -6,7 +6,9 @@
       <div class="logo-item">
         <span class="letter-t">T</span>      
         <span class="letter-v">V</span>
-        <div class="title">Full Stack Developer</div>
+        <div class="title">
+          <div class="title-text">Full Stack Developer</div>
+        </div>
       </div>       
     </div>
     <div>Contact Information</div>

@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const props = defineProps({
+  isFixed: Boolean,
+})
+
+const position = ref(props.isFixed ? 'fixed' : 'inline')
+</script>
 <template>
   <div class="made-with">
     <div class="vite">
@@ -58,7 +66,7 @@
 </template>
 <style scoped>
   .made-with {
-    position: fixed;
+    position: v-bind(position);
     left: 0;
     bottom: 0;
     width: 100%;

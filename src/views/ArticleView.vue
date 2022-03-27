@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
+
 <template>
-    <h6>asdf</h6>
+  <div>Article</div>  
 </template>
+
 <style scoped></style>

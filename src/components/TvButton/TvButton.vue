@@ -55,11 +55,9 @@ const cssBackgroundColorHover = props.cssBackgroundColorHover
     padding: 0px 16px 0px 16px;
     text-transform: uppercase;
 }
-
 .button:hover {
   background-color: v-bind(cssBackgroundColorHover);
 }
-
 a:link, a:visited {
     background-color: v-bind(cssBackgroundColor);
     color: v-bind(cssTextColor);
@@ -79,5 +77,17 @@ a:link, a:visited {
 
 a:hover::before {
   background-color: red;
+}
+@media (max-width: 600px) {
+  a:link, a:visited {
+    padding: 15px 8px 0px; 
+    background-color: v-bind(cssBackgroundColor);
+  }  
+}
+@media (max-width: 480px) {
+  a:link, a:visited {
+    padding: 15px 8px 0px 8px;
+    background-color: v-bind(cssBackgroundColor);
+  }
 }
 </style>

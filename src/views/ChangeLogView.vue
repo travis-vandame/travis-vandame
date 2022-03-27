@@ -6,10 +6,10 @@
       <div class="logo-item">
         <span class="letter-t">T</span>      
         <span class="letter-v">V</span>
-        <div class="title">Full Stack Developer</div>
+        <div class="title">Changelogs</div>
       </div>       
     </div>
-    <div>Contact Information</div>
+    <div>GitHub repository information</div>
   </div>
 </template>
 <style scoped>

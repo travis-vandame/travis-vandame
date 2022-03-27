@@ -1,9 +1,50 @@
-<script setup lang="ts">
-import TvArticle from "@/components/TvArticle/TvArticle.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <tv-article></tv-article>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-item">
+        <span class="letter-t">T</span>      
+        <span class="letter-v">V</span>
+        <div class="title">About</div>
+      </div>       
+    </div>
+    <div>Information regarding the development of this site</div>
+  </div>
 </template>
+<style scoped>
+.container {
+  /* border: 1px solid yellow; */
 
-<style scoped></style>
+  display: flex;
+  flex-direction: column;  
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.logo-item {
+  /* border: 1px solid chartreuse; */
+
+  text-align: center;
+  flex-basis: 100%;
+}
+.letter-t {
+  font-size: 150px;
+}
+.letter-v {
+  font-size: 200px;
+}
+@media (max-width: 800px) { 
+}
+@media (max-width: 600px) { 
+}
+@media (max-width: 480px) {
+  .logo-item {
+    flex-basis: 85%;
+    text-align: center;
+  }
+}
+
+</style>

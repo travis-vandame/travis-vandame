@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+import { GitHubUserRepoApi } from '../services/TvGitHubDataService'
+
+let repos = ref('')
+
+async function getIt() {
+  const data = await GitHubUserRepoApi.fetchUserRepos('travis-vandame')
+
+  console.log(data[0].owner)
+}
+</script>
 
 <template>
   <div class="container">

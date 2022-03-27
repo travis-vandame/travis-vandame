@@ -109,8 +109,6 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
   flex: 1;
 }
 .main {
-  /* border: 1px solid tan; */
-  
   flex-grow: 1;  
 }
 .navigation {
@@ -123,18 +121,13 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
   .body {
     flex-direction: column;
   }
-  .main {
-    /* border: 1px solid tan; */
-  }
   .router {
-    /* border: 1px solid magenta; */
     margin: 5px;
 
     display: flex;
     flex-direction: column;
   }
   .router-view {
-    /* border: 1px solid red; */
     margin: 5px;
   }  
   .navigation {
@@ -155,7 +148,6 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
   }
   .router-view {
     flex-basis: 83%;
-    /* border: 1px solid red; */
   }
   .navigation {
     display: flex;

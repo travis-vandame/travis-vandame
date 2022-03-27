@@ -5,7 +5,6 @@ import TvLink from '../TvLink/TvLink.vue'
 const props = defineProps({
   isFixed: Boolean,
 })
-
 const position = ref(props.isFixed ? 'fixed' : 'inline')
 </script>
 <template>

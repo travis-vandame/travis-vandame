@@ -4,7 +4,7 @@ import { useEventListener } from "./event";
 export function useWindow() {
     const windowWidth = ref(0)
     const windowHeight = ref(0)
-   
+    
     useEventListener(window, 'resize', (event: 
         {
             innerWidth: number; 

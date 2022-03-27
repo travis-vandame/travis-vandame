@@ -44,7 +44,6 @@ const cssBackgroundColorHover = props.cssBackgroundColorHover
 </template>
 
 <style scoped>
-/* https://material.io/components/buttons#specs */
 .button {
     background-color: v-bind(cssBackgroundColor);   
     color: v-bind(cssTextColor);

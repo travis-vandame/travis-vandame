@@ -52,6 +52,7 @@
 .title-text-two {
   text-transform: uppercase;
   font-size: 40px;
+  color: var(--tv-c-anchor-green);
 }
 
 .title-text-three {
@@ -81,6 +82,10 @@
     margin-left: 20%;
     text-align: left;
     letter-spacing: 5px;
+  }
+  .title-text-three {
+    letter-spacing: 8px;
+    font-size: medium;
   }
 }
 </style>

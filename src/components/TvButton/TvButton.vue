@@ -63,7 +63,7 @@ a:link, a:visited {
     border: v-bind(cssOutlined);
     height: 36px;
     min-width: 64px;
-    padding: 0px 16px 0px 16px;
+    padding: 0px 12px 0px 12px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1.25px;

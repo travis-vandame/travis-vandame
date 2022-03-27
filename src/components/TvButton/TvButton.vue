@@ -80,7 +80,7 @@ a:hover::before {
 }
 @media (max-width: 600px) {
   a:link, a:visited {
-    padding: 15px 8px 0px; 
+    padding: 14px 8px 0px; 
     background-color: v-bind(cssBackgroundColor);
   }  
 }

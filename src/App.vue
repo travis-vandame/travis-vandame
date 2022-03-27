@@ -109,7 +109,8 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
   flex: 1;
 }
 .main {
-  border: 1px solid tan;
+  /* border: 1px solid tan; */
+  
   flex-grow: 1;  
 }
 .navigation {

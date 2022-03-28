@@ -33,8 +33,8 @@ function minimize() : boolean {
 </script>
 
 <template>
-    <div class="tv-appbar">
-        <div class="tv-appbar-navigation">
+    <div class="tv-app-bar">
+        <div class="tv-app-bar-navigation">
             <tv-link to="http://travis-vandame/github.io">
                 <font-awesome-icon
                     size="lg" 
@@ -44,17 +44,17 @@ function minimize() : boolean {
         </div>
         <div 
             v-if="!isMinimal" 
-            class="tv-appbar-headline">
+            class="tv-app-bar-headline">
 
-            <h6 v-text="props.title" class="tv-appbar-title"></h6>
+            <h6 v-text="props.title" class="tv-app-bar-title"></h6>
         </div>
         <div 
             v-if="!isMinimal"
-            class="tv-appbar-links">
+            class="tv-app-bar-links">
 
             <slot name="links"></slot>
         </div>
-        <div class="tv-appbar-icon">
+        <div class="tv-app-bar-icon">
             
             <TvLink to="http://www.linkedin.com/in/tvandame">
                 <font-awesome-icon
@@ -63,7 +63,7 @@ function minimize() : boolean {
                     color="var(--tv-c-white-mute)" />
             </TvLink>                
         </div>
-        <div class="tv-appbar-icon">
+        <div class="tv-app-bar-icon">
             <tv-link to="http://github.com/travis-vandame">
                 <font-awesome-icon 
                     :icon="['fab', 'github']" 
@@ -71,7 +71,7 @@ function minimize() : boolean {
                     color="var(--tv-c-white-mute)" />
             </tv-link>
         </div>
-        <div class="tv-appbar-icon button-settings">
+        <div class="tv-app-bar-icon button-settings">
 
             <font-awesome-icon
                 @click="collapse"
@@ -79,7 +79,7 @@ function minimize() : boolean {
                 size="lg" 
                 color="var(--tv-c-white-mute)" />
         </div>
-        <div class="tv-appbar-icon button-minimal">
+        <div class="tv-app-bar-icon button-minimal">
 
             <font-awesome-icon
                 @click="minimize"
@@ -87,7 +87,7 @@ function minimize() : boolean {
                 size="lg" 
                 color="var(--tv-c-white-mute)" />
         </div>
-        <div class="tv-appbar-flexbox-break-item"></div>
+        <div class="tv-app-bar-flexbox-break-item"></div>
         <div
             v-if="!isCollapsed" 
             class="tv-appbar-menu">
@@ -100,7 +100,7 @@ function minimize() : boolean {
 </template>
 
 <style scoped>
-.tv-appbar {
+.tv-app-bar {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -112,74 +112,73 @@ function minimize() : boolean {
     background-color: var(--tv-c-black-mute);
     box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
 }
-.tv-appbar-title {
+.tv-app-bar-title {
     margin: 0px; 
     padding: 0px; 
     color: var(--tv-c-white-mute);    
 }
-.tv-appbar-navigation {
+.tv-app-bar-navigation {
     margin: 0px 15px 0px 15px;
     font-size: x-large;
 }
-.tv-appbar-headline {
+.tv-app-bar-headline {
     margin-left: 24px;
 }
-.tv-appbar-links {
+.tv-app-bar-links {
     margin-left: auto;
 }
-.tv-appbar-icon { 
+.tv-app-bar-icon { 
     margin-right: 15px;
     font-size: large;
 }
-.tv-appbar-flexbox-break-item {
+.tv-app-bar-flexbox-break-item {
     flex-basis: 100%; /* Things that make you think. TJV :P */
     height: 0px;
 }
-.tv-appbar-menu {
+.tv-app-bar-menu {
     margin-left: auto;
     margin-right: 16px;
 }
 @media (max-width: 800px) {
-    .tv-appbar-headline {
+    .tv-app-bar-headline {
         display: none;
     }
 }
 @media (max-width: 600px) {
-    .tv-appbar {
+    .tv-app-bar {
         width: v-bind(width);
         height: v-bind(height);
     }
-    .tv-appbar-headline {
+    .tv-app-bar-headline {
         margin-right: 24px;
     }
-    .tv-appbar-links {
+    .tv-app-bar-links {
         display: none;
     }
 }
 @media (max-width: 480px) {
-    .tv-appbar {
+    .tv-app-bar {
         flex-direction: column;
         width: 55px;
         height: 225px;
         box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
     }
-    .tv-appbar-navigation {
+    .tv-app-bar-navigation {
         padding-top: 15px;
         font-size: x-large;
     }
-    .tv-appbar-headline {
+    .tv-app-bar-headline {
         display: none;
     }
-    .tv-appbar-icon {
+    .tv-app-bar-icon {
         padding-top: 15px;
         padding-left: 15px;
         font-size: x-large;
      }
-
      .button-minimal {
          display: none;
      }
-    .tv-appbar-menu {
+    .tv-app-bar-menu {
         width: 100%;
         padding: 15px;
         background-color: var(--tv-c-black-mute);

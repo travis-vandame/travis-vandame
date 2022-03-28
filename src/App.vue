@@ -6,8 +6,9 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
 </script>
 
 <template>
-  <div class="template">
-    <header>
+  <div class="tv-app">
+    <div class="tv-app-header">
+
       <tv-app-bar>
         <template v-slot:links>
           <tv-button 
@@ -44,19 +45,18 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
           </tv-button>
         </template>          
         <template v-slot:menu>
-            <tv-display>
-            </tv-display>
+            <tv-display></tv-display>
         </template>
       </tv-app-bar>
-    </header>
-    <div class="body">
-      <main class="main">
-        <div class="router">
-          <router-view class="router-view"></router-view>
+    </div>
+    <div class="tv-app-body">
+      <main class="tv-app-main">
+        <div class="tv-app-vue-router">
+          <router-view></router-view>
         </div>
       </main>
       <!-- <nav class="navigation" style="display: flex; position: fixed; bottom: 100px;"> -->
-      <nav class="navigation">
+      <nav class="tv-app-navigation">
         <tv-button 
             text="Home"
             to="/home"
@@ -90,70 +90,54 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
             cssBackgroundColorHover="var(--color-background-soft)">
         </tv-button>      
       </nav>
-      <aside class="aside">ASide</aside>
-      <tv-footer :isFixed="true">footer</tv-footer>
-    </div>  
+      <aside class="tv-app-aside">ASide</aside>  
+      <tv-footer :isFixed="true">footer</tv-footer> 
+
+    </div>
   </div>
 </template>
 
 <style>
 @import "@/assets/styles/index.css";
-.template {
+.tv-app {
   display: flex;
   flex-direction: column;  
   min-height: 100vh;
 }
-.body {
+.tv-app-body {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.main {
+.tv-app-main {
   flex-grow: 1;  
 }
-.navigation {
+.tv-app-navigation {
   display: none;
 }
-.aside {
+.tv-app-aside {
   display: none;
 }
 @media (max-width: 600px) {
-  .body {
-    flex-direction: column;
-  }
-  .router {
-    margin: 5px;
-
+  .tv-app-vue-router {
     display: flex;
     flex-direction: column;
   }
-  .router-view {
-    margin: 5px;
-  }  
-  .navigation {
+  .tv-app-navigation {
+    /* TODO: Fix
     display: flex;
     justify-content: space-evenly;
+    */
   }
-  .aside {
+  .tv-app-aside {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  .body {
-    flex-direction: column;
+  .tv-app-navigation {
+    display: none;
   }
-  .router {
-    display: flex;
-    justify-content: flex-end;   
-  }
-  .router-view {
-    flex-basis: 83%;
-  }
-  .navigation {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .aside {
+  .tv-app-aside {
     display: none;
   }
 }

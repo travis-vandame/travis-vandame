@@ -1,71 +1,100 @@
 <script setup lang="ts">
-import { TvGitHubRestApi } from '../services/TvGitHubRestService'
+import type { ITvGitHubUsernameRepos } from '../services/github/types/index';
 
-async function fetchGitHubRepos(owner: string) {
-  const data = await TvGitHubRestApi.fetchUsernameRepos(owner)
+import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
+import TvCard from '../components/TvCard/TvCard.vue'
+import { ref } from 'vue';
 
-  console.log(data)
+const repos = ref<ITvGitHubUsernameRepos[]>()
+
+async function fetchGitHubRepos({ owner }: { owner: string; }) {
+  repos.value = await TvGitHubRestApi.fetchUsernameRepos(owner)
+  console.log(repos)
 }
 </script>
 
 <template>
-  <div class="container">
-    <div class="logo">
-      <div class="logo-item">
-        <span class="letter-t" @click="fetchGitHubRepos('travis-vandame')">T</span>      
-        <span class="letter-v">V</span>
+  <div class="tv-app-project-view">
+    <div class="tv-app-project-view-logo">
+      <div class="tv-app-project-view-logo-item">
+        <span class="tv-app-project-view-logo-item-letter-t">T</span>      
+        <span class="tv-app-project-view-logo-item-letter-v">V</span>
         <span>
-          <div class="title">
-            <span class="title-text-one">Full</span> 
-            <span class="title-text-two">Project</span> 
-            <span class="title-text-three">`In ${develop}ment`</span>
+          <div class="tv-app-project-view-logo-item-title">
+            <span class="tv-app-project-view-logo-item-title-text-one">GitHub</span> 
+            <span class="tv-app-project-view-logo-item-title-text-two">Projects <span class="tv-app-project-view-text-used">used</span></span> 
+            <span class="tv-app-project-view-logo-item-title-text-three" @click="fetchGitHubRepos({ owner: 'vuejs'})">@click="fetchRepos({ projectIds: []]})"</span>
           </div>
         </span>
-      </div>       
+      </div> 
+    </div>
+    <div class="tv-app-project-view-scroll">
+      <tv-card
+        class="tv-card"
+        v-for="repo in repos"
+        :key="repo.id"
+        :title="repo.name"
+        :secondary="repo.html_url"
+        :content="repo.description">
+      </tv-card>
     </div>
   </div>
 </template>
 <style scoped>
-.container {
+.tv-app-project-view-scroll {
   display: flex;
   flex-direction: column;  
 }
-.logo {
+.tv-app-project-view-logo {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 5%;
 }
-.logo-item {
+.tv-app-project-view-logo-item {
   text-align: center;
   flex-basis: 100%;
 }
-.letter-t {
+.tv-app-project-view-logo-item-letter-t {
   font-size: 150px;
 }
-.letter-v {
+.tv-app-project-view-logo-item-letter-v {
   font-size: 200px;
 }
-.title {
+.tv-app-project-view-logo-item-title {
   display: flex;
   flex-direction: column;
   font-size: 25px;
   flex-basis: 50%;
 }
-.title-text-one {
+.tv-app-project-view-logo-item-title-text-one {
   margin-left: 10%;
   text-align: center;
   letter-spacing: 5px;
 }
-.title-text-two {
+.tv-app-project-view-logo-item-title-text-two {
   text-transform: uppercase;
   font-size: 40px;
   color: var(--tv-c-anchor-green);
 }
-
-.title-text-three {
-  letter-spacing: 10px;
+.tv-app-project-view-logo-item-title-text-three {
+  letter-spacing: 1.5px;
+  color: lightseagreen;
   font-size: medium;
+}
+.tv-app-project-view-logo-item-title-text-two span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 14px;
+}   
+.tv-app-project-view-scroll {
+  overflow:scroll;
+  align-items: center;
+  height: 225px;
+  margin-top: 3%;
+}
+/* TODO Remove this temp css below */
+.tv-card {
+  margin-bottom: 24px;
 }
 @media (max-width: 800px) { 
   .title-text-one {
@@ -79,21 +108,38 @@ async function fetchGitHubRepos(owner: string) {
     margin-left: 25%;
     text-align: center;
     letter-spacing: 5px;
-  }
+  }  
+  .tv-app-project-view-scroll {
+    overflow: scroll;
+    align-items: center;
+    height: 265px;
+    margin-top: 5%;
+    padding-top: 6px;
+  }    
 }
 @media (max-width: 480px) {
-  .logo-item {
-    flex-basis: 85%;
-    text-align: center;
+  .tv-app-project-view-logo-item-letter-t {
+    font-size: 50px;
   }
-  .title-text-one {
-    margin-left: 20%;
-    text-align: left;
+  .tv-app-project-view-logo-item-letter-v {
+    font-size: 100px;
+  }
+  .tv-app-project-view-logo-item-title-text-one {
+    margin-right: 10%;
+    text-align: right;
     letter-spacing: 5px;
   }
-  .title-text-three {
-    letter-spacing: 8px;
-    font-size: medium;
+  .tv-app-project-view-logo-item-title-text-two {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--tv-c-anchor-green);
+  }   
+  .tv-app-project-view-scroll {
+    overflow:scroll;
+    align-items: center;
+    height: 265px;
+    margin-top: 5%;
+    padding-top: 6px;
   }  
 }
 </style>

@@ -7,36 +7,29 @@ const props = defineProps({
 })
 const position = ref(props.isFixed ? 'fixed' : 'inline')
 </script>
+
 <template>
-  <div class="made-with">
+  <div class="tv-app-footer">
     <div class="vite">
       <tv-link to="http://www.vitejs.dev">
         <img
-            alt="Vite logo"
-            class="logo"
-            src="@/assets/images/vite-logo.svg"
-            width="60"
-            height="60"
-        />
+          alt="Vite logo"
+          class="logo"
+          src="@/assets/images/vite-logo.svg" />
       </tv-link>            
     </div>
     <div class="vue">
       <tv-link to="http://vuejs.org/">
         <img
-            alt="Vue logo"
-            class="logo"
-            src="@/assets/images/vue-logo.svg"
-            width="60"
-            height="60"
-        />
+          alt="Vue logo"
+          class="logo"
+          src="@/assets/images/vue-logo.svg" />
       </tv-link>        
     </div>      
     <div class="mdn">
       <tv-link to="https://developer.mozilla.org/">
         <svg 
             id="mdn-logo" 
-            width="100"
-            height="100" 
             class="logo" 
             xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -64,63 +57,45 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
         <img
             alt="GitHub logo"
             class="logo"
-            src="@/assets/images/octocat-logo.png"
-            width="60"
-            height="60"
-        />
+            src="@/assets/images/octocat-logo.png" />
       </tv-link>
     </div>
   </div>
 </template>
-<style scoped>
-  .made-with {
-    position: v-bind(position);
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--tv-c-black-mute);
-    box-shadow: 0 3px 2px -1px var(--tv-c-mdc-blue);
-    transition: 0.3s ease;      
-  }
-  .vite {
-    margin-right: 100px;
-  }
-  .vue {
-    margin-right: 100px;
-  }
-  .mdn {
-    margin-right: 100px;
-  }
-  .logo {
-    display: block;
-    margin: auto;
-  }
-  .logo-m{fill:#74a9f6;}
-  .logo-text{fill:#fbfbfe;}
 
-@media (max-width: 600px) {
- .vite {
-    margin-right: 50px;
-  }
-  .vue {
-    margin-right: 50px;
-  }
-  .mdn {
-    margin-right: 50px;
-  }  
+<style scoped>
+.tv-app-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; /* :/ align justify bla.... */
+  background-color: var(--tv-c-black-mute);
+  transition: 0.3s ease;
 }
-@media (max-width: 480px) {       
- .vite {
-    margin-right: 25px;
-  }
-  .vue {
-    margin-right: 25px;
-  }
-  .mdn {
-    margin-right: 25px;
+.logo {
+  height: 56px;
+  width: 80px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.logo-m{fill:#74a9f6;}
+.logo-text{fill:#fbfbfe;}
+
+.vite {
+  
+}
+
+@media (max-width: 600px) { }
+@media (max-width: 480px) { 
+  .logo {
+    height: 46px;
+    width: 70px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }  
 }  
 </style>

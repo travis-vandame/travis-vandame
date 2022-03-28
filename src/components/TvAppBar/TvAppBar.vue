@@ -135,6 +135,10 @@ function minimize() : boolean {
     margin-right: 15px;    
     font-size: large;
 }
+.tv-app-bar-icon-button-minimal {
+    margin-right: 15px;    
+    font-size: large;
+}
 .tv-app-bar-flexbox-break-item {
     flex-basis: 100%; /* Things that make you think. TJV :P */
     height: 0px;

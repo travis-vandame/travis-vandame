@@ -10,7 +10,7 @@ const height = computed(() => {
 })
 
 const width = computed(() => {
-    return isMinimal.value ? '205px' : '100%' 
+    return isMinimal.value ? '215px' : '100%' 
 })
 
 const props = withDefaults(defineProps<{
@@ -123,20 +123,24 @@ function minimize() : boolean {
 }
 .tv-app-bar-headline {
     margin-left: 24px;
+    margin-right: 15px;
 }
 .tv-app-bar-links {
     margin-left: auto;
 }
 .tv-app-bar-icon { 
-    margin-right: 15px;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
     font-size: large;
 }
 .tv-app-bar-icon-button-settings {
-    margin-right: 15px;    
+    margin-right: 7.5px;
+    margin-left: 7.5px;
     font-size: large;
 }
 .tv-app-bar-icon-button-minimal {
-    margin-right: 15px;    
+    margin-right: 15px;
+    margin-left: 7.5px;
     font-size: large;
 }
 .tv-app-bar-flexbox-break-item {
@@ -152,13 +156,11 @@ function minimize() : boolean {
         display: none;
     }
 }
-@media (max-width: 600px) {
+/* TODO: Fix this should be at 600px but slight icon bug so set to 610 */
+@media (max-width: 610px) {
     .tv-app-bar {
         width: v-bind(width);
         height: v-bind(height);
-    }
-    .tv-app-bar-headline {
-        margin-right: 24px;
     }
     .tv-app-bar-links {
         display: none;
@@ -168,7 +170,7 @@ function minimize() : boolean {
     .tv-app-bar {
         flex-direction: column;
         width: 60px;
-        height: 220px;
+        height: 221px;
         box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
     }
     .tv-app-bar-navigation {
@@ -180,15 +182,12 @@ function minimize() : boolean {
         display: none;
     }
     .tv-app-bar-icon {
-        padding-top: 15px;
-        padding-left: 15px;
-        font-size: x-large;
+        margin: 13.5px;
+        font-size: large;
     }
     .tv-app-bar-icon-button-settings {
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-bottom: 9px;
-        font-size: x-large;
+        margin: 13.5px;
+        font-size: large;
     }
     .tv-app-bar-icon-button-minimal {
         display: none;

@@ -15,7 +15,7 @@ const isExternalLink = computed(() => {
 
 <template>
     <a v-if="isExternalLink" :href="props.to"><slot></slot></a>
-    <router-link v-else v-bind="props">
+    <router-link v-else v-bind="props" class="tv-app-vue-router-link">
         <slot></slot>
     </router-link>    
 </template>

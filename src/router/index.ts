@@ -20,9 +20,9 @@ const router = createRouter({
       name: "Project",
       component: () => import("../views/ProjectView.vue"),
     }, {
-      path: "/changelog",
-      name: "Changelog",
-      component: () => import("../views/ChangeLogView.vue"),
+      path: "/commit",
+      name: "Commit",
+      component: () => import("../views/CommitView.vue"),
     },
   ],
 });

@@ -28,8 +28,8 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>
           <tv-button 
-              text="Changelog"
-              to="/changelog"
+              text="Commits"
+              to="/commit"
               :cssOutline="false"
               cssTextColor="var(--tv-c-anchor-green)"
               cssBackgroundColor="var(--tv-c-black-mute)"
@@ -74,8 +74,8 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
             cssBackgroundColorHover="var(--color-background-soft)">
         </tv-button>
         <tv-button 
-            text="Changelog"
-            to="/changelog"
+            text="Commits"
+            to="/commit"
             :cssOutline="false"
             cssTextColor="var(--tv-c-anchor-green)"
             cssBackgroundColor="var(--tv-c-black-mute)"

@@ -5,6 +5,21 @@ export interface ITvGitHubRepoLanguages{
     HTML: number
     JavaScript: number
 }
+export interface ITvGitHubRepoCommitAuthor {
+    name: string
+    email: string
+    date: string
+}
+export interface ITvGitHubRepoCommitTree {
+    sha: string
+    url: string
+}
+export interface ITvGitHubRepoCommintVerification {
+    verified: boolean
+    reason: string
+    signature: null
+    payload: null
+}
 export interface ITvGitHubRepoOwner {
     login: string
     id: number
@@ -24,6 +39,25 @@ export interface ITvGitHubRepoOwner {
     received_events_url: string
     type: string
     site_admin: boolean
+}
+export interface ITvGitHubRepoCommit {
+    sha: string
+    node_id: string
+    html_url: string
+    commit: {
+        author: ITvGitHubRepoCommitAuthor
+        committer: ITvGitHubRepoCommitAuthor
+        message: string
+        tree: ITvGitHubRepoCommitTree
+        url: string
+        comment_count: number
+        verification: ITvGitHubRepoCommintVerification
+    }
+    url: string
+    comments_url: string
+    author: ITvGitHubRepoOwner
+    committer: ITvGitHubRepoOwner
+    parents: []
 }
 export interface ITvGitHubUsernameRepos{
     id: number

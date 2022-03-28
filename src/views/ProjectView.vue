@@ -26,9 +26,21 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
             <span class="tv-app-project-view-logo-item-title-text-three" @click="fetchGitHubRepos({ owner: 'vuejs'})">@click="fetchRepos({ projectIds: []]})"</span>
           </div>
         </span>
-      </div> 
+      </div>
+      <!-- TODO: Here we are duplicating HTML for the scrolling github data to satisfy mobile and desktop views -->
+      <!-- vue teleport media options and javascript are all being evaluated to make this a little more friendly -->
+      <div class="tv-app-project-view-scroll-desktop">
+        <tv-card
+          class="tv-card"
+          v-for="repo in repos"
+          :key="repo.id"
+          :title="repo.name"
+          :secondary="repo.html_url"
+          :content="repo.description">
+        </tv-card>
+      </div>      
     </div>
-    <div class="tv-app-project-view-scroll">
+    <div class="tv-app-project-view-scroll-mobile">
       <tv-card
         class="tv-card"
         v-for="repo in repos"
@@ -49,6 +61,7 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-top: 50px;
 }
 .tv-app-project-view-logo-item {
   text-align: center;
@@ -86,11 +99,22 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
   text-orientation: mixed;
   font-size: 14px;
 }   
-.tv-app-project-view-scroll {
-  overflow:scroll;
+.tv-app-project-view-scroll-desktop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
   align-items: center;
-  height: 225px;
+  height: 600px;
   margin-top: 3%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tv-app-project-view-scroll-desktop::-webkit-scrollbar {
+  display: none;
+}
+.tv-app-project-view-scroll-mobile {
+  display: none
 }
 /* TODO Remove this temp css below */
 .tv-card {
@@ -109,7 +133,7 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
     text-align: center;
     letter-spacing: 5px;
   }  
-  .tv-app-project-view-scroll {
+  .tv-app-project-view-scroll-desktop {
     overflow: scroll;
     align-items: center;
     height: 265px;
@@ -117,7 +141,7 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
     padding-top: 6px;
   }    
 }
-@media (max-width: 480px) {
+@media (max-width: 480px) { 
   .tv-app-project-view-logo-item-letter-t {
     font-size: 50px;
   }
@@ -133,12 +157,17 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
     text-transform: uppercase;
     font-size: 30px;
     color: var(--tv-c-anchor-green);
+  }
+  .tv-app-project-view-scroll-desktop {
+    display: none;
   }   
-  .tv-app-project-view-scroll {
-    overflow:scroll;
+  .tv-app-project-view-scroll-mobile {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
     align-items: center;
-    height: 265px;
-    margin-top: 5%;
+    height: 240px;
+    margin-top: 0%;
     padding-top: 6px;
   }  
 }

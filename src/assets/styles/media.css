@@ -15,7 +15,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --color-background: var(--tv-c-black);
-        --color-background-soft: var(--tv-c-black-soft);
+        /* --color-background-soft: var(--tv-c-black-soft);*/
         --color-background-mute: var(--tv-c-black-mute);
 
         --color-border: var(--tv-c-divider-dark-2);

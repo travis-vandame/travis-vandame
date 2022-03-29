@@ -8,7 +8,7 @@
         <span class="letter-v">V</span>
         <span>
           <div class="title">
-            <span class="title-text-one">Full</span> 
+            <span class="title-text-one">Hummm.....</span> 
             <span class="title-text-two">About</span> 
             <span class="title-text-three">`In ${develop}ment`</span>
           </div>

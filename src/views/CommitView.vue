@@ -4,6 +4,7 @@ import type { ITvGitHubRepoCommit } from '../services/github/types/index';
 import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
 import { onMounted, ref } from 'vue';
 import TvCard from '../components/TvCard/TvCard.vue'
+import TvLink from '../components/TvLink/TvLink.vue'
 
 const repoCommits = ref<ITvGitHubRepoCommit[]>()
 
@@ -28,8 +29,8 @@ onMounted(() => {
         <span>
           <div class="tv-app-commit-view-logo-item-title">
             <span class="tv-app-commit-view-logo-item-title-text-one">GitHub</span> 
-            <span class="tv-app-commit-view-logo-item-title-text-two">Commits <span class="tv-app-commit-view-text-used">used</span></span> 
-            <span class="tv-app-commit-view-logo-item-title-text-three">List of github commits pulled from the github api.</span>
+            <span class="tv-app-commit-view-logo-item-title-text-two">Commits <span class="tv-app-commit-view-text-used">made</span></span> 
+            <span class="tv-app-commit-view-logo-item-title-text-three">Current user commits</span>
           </div>
         </span>
       </div>
@@ -41,8 +42,11 @@ onMounted(() => {
           v-for="commit in repoCommits"
           :key="commit.node_id"
           :title="commit.author.login"
-          :secondary="commit.committer.type"
+          secondary=""
           :content="commit.commit.message">
+          <template v-slot:secondary>
+            <tv-link :to="commit.html_url">{{ commit.commit.tree.sha.substring(0, 7) }}</tv-link>
+          </template>          
         </tv-card>
       </div>      
     </div>
@@ -52,8 +56,11 @@ onMounted(() => {
           v-for="commit in repoCommits"
           :key="commit.node_id"
           :title="commit.author.login"
-          :secondary="commit.committer.type"
+          secondary=""
           :content="commit.commit.message">
+          <template v-slot:secondary>
+            <tv-link :to="commit.html_url">{{ commit.commit.tree.sha.substring(0, 7) }}</tv-link>
+          </template>
       </tv-card>
     </div>
   </div>
@@ -68,10 +75,11 @@ onMounted(() => {
   flex-direction: row;
   justify-content: flex-end;
   margin-top: 50px;
+  margin-bottom: 10px;  
 }
 .tv-app-commit-view-logo-item {
   text-align: center;
-  flex-basis: 100%;
+  flex-basis: 80%;
 }
 .tv-app-commit-view-logo-item-letter-t {
   font-size: 150px;
@@ -112,7 +120,7 @@ onMounted(() => {
   overflow: scroll;
   align-items: center;
   height: 450px;
-  margin-top: 3%;
+  margin-top: 6%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -124,7 +132,8 @@ onMounted(() => {
 }
 /* TODO Remove this temp css below */
 .tv-card {
-  margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 @media (max-width: 800px) { 
   .title-text-one {
@@ -147,7 +156,11 @@ onMounted(() => {
     padding-top: 6px;
   }    
 }
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
+  .tv-app-commit-view-logo-item {
+    text-align: center;
+    flex-basis: 100%;
+  }   
   .tv-app-commit-view-logo-item-letter-t {
     font-size: 50px;
   }
@@ -172,8 +185,7 @@ onMounted(() => {
     flex-direction: column;
     overflow: scroll;
     align-items: center;
-    height: 240px;
-    margin-top: 0%;
+    height: 195px;
     padding-top: 6px;
   }  
 }

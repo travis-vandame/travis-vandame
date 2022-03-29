@@ -111,6 +111,7 @@ function minimize() : boolean {
     align-items: center;
     background-color: var(--tv-c-black-mute);
     box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
+    border-bottom-right-radius: 10px;
 }
 .tv-app-bar-title {
     margin: 0px; 

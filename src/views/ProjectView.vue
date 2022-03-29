@@ -4,11 +4,12 @@ import type { ITvGitHubUsernameRepos } from '../services/github/types/index';
 import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
 import { onMounted, ref } from 'vue';
 import TvCard from '../components/TvCard/TvCard.vue'
+import TvLink from '../components/TvLink/TvLink.vue'
 
-const repos = ref<ITvGitHubUsernameRepos[]>()
+const userRepos = ref<ITvGitHubUsernameRepos[]>()
 
 async function fetchGitHubRepos({ owner }: { owner: string; }) {
-  repos.value = await TvGitHubRestApi.fetchUsernameRepos(owner)
+  userRepos.value = await TvGitHubRestApi.fetchUsernameRepos(owner)
 }
 
 onMounted(() => {
@@ -25,8 +26,8 @@ onMounted(() => {
         <span>
           <div class="tv-app-project-view-logo-item-title">
             <span class="tv-app-project-view-logo-item-title-text-one">GitHub</span> 
-            <span class="tv-app-project-view-logo-item-title-text-two">Projects <span class="tv-app-project-view-text-used">used</span></span> 
-            <span class="tv-app-project-view-logo-item-title-text-three">List of github projects this site was built on.</span>
+            <span class="tv-app-project-view-logo-item-title-text-two">Project <span class="tv-app-project-view-text-used">deps</span></span> 
+            <span class="tv-app-project-view-logo-item-title-text-three">Project dependencies</span>
           </div>
         </span>
       </div>
@@ -35,22 +36,33 @@ onMounted(() => {
       <div class="tv-app-project-view-scroll-desktop">
         <tv-card
           class="tv-card"
-          v-for="repo in repos"
-          :key="repo.id"
-          :title="repo.name"
-          :secondary="repo.html_url"
-          :content="repo.description">
+          v-for="userRepo in userRepos"
+          :key="userRepo.id"
+          :title="userRepo.owner.login"
+          secondary=""
+          :content="userRepo.description">
+
+          <template v-slot:icon>
+            <img :src="userRepo.owner.avatar_url" height="25" width="25" style="border-radius: 50%" alt="Avatar">
+          </template>
+          <template v-slot:secondary>
+            <tv-link :to="userRepo.html_url">{{ userRepo.full_name }}</tv-link>
+          </template>
         </tv-card>
       </div>      
     </div>
     <div class="tv-app-project-view-scroll-mobile">
       <tv-card
         class="tv-card"
-        v-for="repo in repos"
-        :key="repo.id"
-        :title="repo.name"
-        :secondary="repo.html_url"
-        :content="repo.description">
+        v-for="userRepo in userRepos"
+        :key="userRepo.id"
+        :title="userRepo.name"
+        secondary=""
+        :content="userRepo.description">
+
+        <template v-slot:secondary>
+          <tv-link :to="userRepo.html_url">{{ userRepo.full_name }}</tv-link>
+        </template>                   
       </tv-card>
     </div>
   </div>
@@ -65,10 +77,11 @@ onMounted(() => {
   flex-direction: row;
   justify-content: flex-end;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 .tv-app-project-view-logo-item {
   text-align: center;
-  flex-basis: 100%;
+  flex-basis: 80%;
 }
 .tv-app-project-view-logo-item-letter-t {
   font-size: 150px;
@@ -108,7 +121,7 @@ onMounted(() => {
   width: 100%;
   overflow: scroll;
   align-items: center;
-  height: 500px;
+  height: 450px;
   margin-top: 6%;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -121,7 +134,8 @@ onMounted(() => {
 }
 /* TODO Remove this temp css below */
 .tv-card {
-  margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 @media (max-width: 800px) { 
   .title-text-one {
@@ -144,7 +158,11 @@ onMounted(() => {
     padding-top: 6px;
   }    
 }
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
+  .tv-app-project-view-logo-item {
+    text-align: center;
+    flex-basis: 100%;
+  }   
   .tv-app-project-view-logo-item-letter-t {
     font-size: 50px;
   }
@@ -169,8 +187,7 @@ onMounted(() => {
     flex-direction: column;
     overflow: scroll;
     align-items: center;
-    height: 240px;
-    margin-top: 0%;
+    height: 195px;
     padding-top: 6px;
   }  
 }

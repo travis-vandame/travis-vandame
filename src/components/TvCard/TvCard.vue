@@ -13,21 +13,24 @@ const props = defineProps({
         </div>
         <div class="tv-section">
             <div class="tv-title">
-                {{ props.title }}
+                <h6 style="padding: 0px; margin: 0px;">
+                    <slot name="icon"></slot>{{ props.title }}
+                </h6>
                 <slot name="title"></slot>
             </div>
             <div class="tv-title-secondary">
-                {{ props.secondary }}
+                <span class="caption">{{ props.secondary }}</span>
                 <slot name="secondary"></slot>
             </div>
         </div>
         <div class="tv-section">
             <div class="tv-content">
+                <span class="body1">{{ props.content }}</span>
                 <slot name="content">{{ props.content }}</slot>                
             </div>
         </div>
         <div class="tv-action">
-            <slot name="action">Toolbar</slot>
+            <slot name="action"></slot>
         </div>
     </div>
 </template>
@@ -39,6 +42,15 @@ const props = defineProps({
     width: 344px;
     background-color: var(--tv-c-black-mute); 
     padding: 16px;
+    border-radius: 10px;
+    transition: 0.3s;    
+}
+.tv-title-secondary {
+    margin-bottom: 18px;
+}
+
+.tv-action {
+    margin-top: 18px;
 }
 @media (max-width: 600px) { }
 @media (max-width: 480px) {
@@ -46,8 +58,6 @@ const props = defineProps({
         display: flex;
         flex-direction: column;
         width: 304px;
-        background-color: var(--tv-c-black-mute); 
-        padding: 16px;
     }
 }
 </style>

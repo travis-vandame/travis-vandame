@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TvAppBar from './components/TvAppBar/TvAppBar.vue'
+import TvToolbar from './components/TvToolbar/TvToolbar.vue'
 import TvFooter from "./components/TvFooter/TvFooter.vue"
 import TvButton from "./components/TvButton/TvButton.vue"
 import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
@@ -11,7 +11,7 @@ function eventListener(event: Object) { }
 <template>
   <div class="tv-app">
     <div class="tv-app-header">
-      <tv-app-bar title="Travis VanDame" v-on:toolbarEvent="eventListener">
+      <tv-toolbar title="Travis VanDame" v-on:toolbarEvent="eventListener">
         <template v-slot:logo>
           <tv-link to="http://travis-vandame/github.io">
               <font-awesome-icon
@@ -72,7 +72,7 @@ function eventListener(event: Object) { }
                 size="lg" 
                 color="var(--tv-c-white-mute)" />          
         </template>
-      </tv-app-bar>
+      </tv-toolbar>
     </div>
     <div class="tv-app-body">
       <main class="tv-app-main">

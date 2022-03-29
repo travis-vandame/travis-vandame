@@ -3,14 +3,26 @@ import TvAppBar from './components/TvAppBar/TvAppBar.vue'
 import TvFooter from "./components/TvFooter/TvFooter.vue"
 import TvButton from "./components/TvButton/TvButton.vue"
 import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
+import TvLink from "./components/TvLink/TvLink.vue"
+
+function eventListener(event: Object) {
+  console.log(event)
+}
 </script>
 
 <template>
   <div class="tv-app">
     <div class="tv-app-header">
-
-      <tv-app-bar>
-        <template v-slot:links>
+      <tv-app-bar title="Travis VanDame" v-on:toolbarEvent="eventListener">
+        <template v-slot:logo>
+          <tv-link to="http://travis-vandame/github.io">
+              <font-awesome-icon
+                  size="lg" 
+                  color="var(--tv-c-anchor-green)"             
+                  :icon="['fa-brands', 'vuejs']" />
+          </tv-link>          
+        </template>
+        <template v-slot:navigation>
           <tv-button 
               text="Home"
               to="/home"
@@ -43,9 +55,24 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
               cssBackgroundColor="var(--tv-c-black-mute)"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>
+        </template>
+        <template v-slot:icons-social>
+          
+        </template>
+        <template v-slot:menu-icon>
+          <font-awesome-icon
+              :icon="['fas', 'gear']" 
+              size="lg" 
+              color="var(--tv-c-white-mute)" />          
         </template>          
         <template v-slot:menu>
             <tv-display></tv-display>
+        </template>
+        <template v-slot:minimal-icon>
+            <font-awesome-icon
+                :icon="['fas', 'minimize']"
+                size="lg" 
+                color="var(--tv-c-white-mute)" />          
         </template>
       </tv-app-bar>
     </div>
@@ -92,7 +119,6 @@ import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
       </nav>
       <aside class="tv-app-aside">ASide</aside>  
       <tv-footer :isFixed="true">footer</tv-footer> 
-
     </div>
   </div>
 </template>

@@ -2,15 +2,18 @@
 import type { ITvGitHubUsernameRepos } from '../services/github/types/index';
 
 import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
+import { onMounted, ref } from 'vue';
 import TvCard from '../components/TvCard/TvCard.vue'
-import { ref } from 'vue';
 
 const repos = ref<ITvGitHubUsernameRepos[]>()
 
 async function fetchGitHubRepos({ owner }: { owner: string; }) {
   repos.value = await TvGitHubRestApi.fetchUsernameRepos(owner)
-  console.log(repos)
 }
+
+onMounted(() => {
+  fetchGitHubRepos({ owner: 'vuejs'})
+})
 </script>
 
 <template>
@@ -23,7 +26,7 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
           <div class="tv-app-project-view-logo-item-title">
             <span class="tv-app-project-view-logo-item-title-text-one">GitHub</span> 
             <span class="tv-app-project-view-logo-item-title-text-two">Projects <span class="tv-app-project-view-text-used">used</span></span> 
-            <span class="tv-app-project-view-logo-item-title-text-three" @click="fetchGitHubRepos({ owner: 'vuejs'})">@click="fetchRepos({ projectIds: []]})"</span>
+            <span class="tv-app-project-view-logo-item-title-text-three">List of github projects this site was built on.</span>
           </div>
         </span>
       </div>
@@ -105,8 +108,8 @@ async function fetchGitHubRepos({ owner }: { owner: string; }) {
   width: 100%;
   overflow: scroll;
   align-items: center;
-  height: 600px;
-  margin-top: 3%;
+  height: 500px;
+  margin-top: 6%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

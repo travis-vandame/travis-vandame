@@ -17,7 +17,7 @@ export abstract class TvGitHubRestApi {
         let url = `https://api.github.com/repos/${owner}/${repo}/commits`
         const response = await fetch(url)
         const data = await response.json()
-        console.log(data)
+
         return data
     }
     static async fetchUsernameRepos(username: string): Promise<ITvGitHubUsernameRepos[]>{

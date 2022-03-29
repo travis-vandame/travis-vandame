@@ -2,8 +2,8 @@
 import type { ITvGitHubRepoCommit } from '../services/github/types/index';
 
 import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
+import { onMounted, ref } from 'vue';
 import TvCard from '../components/TvCard/TvCard.vue'
-import { ref } from 'vue';
 
 const repoCommits = ref<ITvGitHubRepoCommit[]>()
 
@@ -11,9 +11,12 @@ async function fetchGitHubRepoCommits(
     { owner }: { owner: string; },
     { repo }: { repo: string; }
 ) {
-  
-repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
+  repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
 }
+
+onMounted(() => {
+  fetchGitHubRepoCommits({ owner: 'travis-vandame' }, { repo: 'travis-vandame' })
+})
 </script>
 
 <template>
@@ -26,7 +29,7 @@ repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
           <div class="tv-app-commit-view-logo-item-title">
             <span class="tv-app-commit-view-logo-item-title-text-one">GitHub</span> 
             <span class="tv-app-commit-view-logo-item-title-text-two">Commits <span class="tv-app-commit-view-text-used">used</span></span> 
-            <span class="tv-app-commit-view-logo-item-title-text-three" @click="fetchGitHubRepoCommits({ owner: 'travis-vandame' }, { repo: 'travis-vandame' })">@click="fetchRepos({ projectIds: []]})"</span>
+            <span class="tv-app-commit-view-logo-item-title-text-three">List of github commits pulled from the github api.</span>
           </div>
         </span>
       </div>
@@ -108,7 +111,7 @@ repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
   width: 100%;
   overflow: scroll;
   align-items: center;
-  height: 600px;
+  height: 450px;
   margin-top: 3%;
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -5,9 +5,7 @@ import TvButton from "./components/TvButton/TvButton.vue"
 import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
 import TvLink from "./components/TvLink/TvLink.vue"
 
-function eventListener(event: Object) {
-  console.log(event)
-}
+function eventListener(event: Object) { }
 </script>
 
 <template>
@@ -57,7 +55,7 @@ function eventListener(event: Object) {
           </tv-button>
         </template>
         <template v-slot:icons-social>
-          
+
         </template>
         <template v-slot:menu-icon>
           <font-awesome-icon

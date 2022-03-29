@@ -143,18 +143,39 @@ onMounted(() => {
   }  
 }
 @media (max-width: 600px) { 
-  .title-text-one {
-    margin-left: 25%;
+  .tv-app-commit-view-logo-item {
+    text-align: center;
+    flex-basis: 100%;
+  }   
+  .tv-app-commit-view-logo-item-letter-t {
+    font-size: 50px;
+  }
+  .tv-app-commit-view-logo-item-letter-v {
+    font-size: 100px;
+  }
+  .tv-app-commit-view-logo-item-title-text-one {
+    margin-left: 10%;
     text-align: center;
     letter-spacing: 5px;
-  }  
+  }
+  .tv-app-commit-view-logo-item-title-text-two {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--tv-c-anchor-green);
+  }
   .tv-app-commit-view-scroll-desktop {
+    display: none;
+  }   
+  .tv-app-commit-view-scroll-mobile {
+    display: flex;
+    flex-direction: column;
     overflow: scroll;
     align-items: center;
-    height: 265px;
-    margin-top: 5%;
-    padding-top: 6px;
-  }    
+    height: 300px;
+    margin-top: 6%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }        
 }
 @media (max-width: 480px) {
   .tv-app-commit-view-logo-item {

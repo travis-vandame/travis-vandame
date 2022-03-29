@@ -42,12 +42,12 @@ onMounted(() => {
           secondary=""
           :content="userRepo.description">
 
-          <template v-slot:icon>
-            <img :src="userRepo.owner.avatar_url" height="25" width="25" style="border-radius: 50%" alt="Avatar">
-          </template>
           <template v-slot:secondary>
             <tv-link :to="userRepo.html_url">{{ userRepo.full_name }}</tv-link>
           </template>
+          <template v-slot:action>
+            <img :src="userRepo.owner.avatar_url" height="25" width="25" style="border-radius: 50%" alt="Avatar">
+          </template>           
         </tv-card>
       </div>      
     </div>
@@ -68,6 +68,13 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
+.avatar {   
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;  
+}
 .tv-app-project-view-scroll {
   display: flex;
   flex-direction: column;  
@@ -145,18 +152,39 @@ onMounted(() => {
   }  
 }
 @media (max-width: 600px) { 
-  .title-text-one {
-    margin-left: 25%;
+  .tv-app-project-view-logo-item {
+    text-align: center;
+    flex-basis: 100%;
+  }   
+  .tv-app-project-view-logo-item-letter-t {
+    font-size: 50px;
+  }
+  .tv-app-project-view-logo-item-letter-v {
+    font-size: 100px;
+  }
+  .tv-app-project-view-logo-item-title-text-one {
+    margin-left: 10%;
     text-align: center;
     letter-spacing: 5px;
-  }  
+  }
+  .tv-app-project-view-logo-item-title-text-two {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--tv-c-anchor-green);
+  }
   .tv-app-project-view-scroll-desktop {
+    display: none;
+  }   
+  .tv-app-project-view-scroll-mobile {
+    display: flex;
+    flex-direction: column;
     overflow: scroll;
     align-items: center;
-    height: 265px;
-    margin-top: 5%;
-    padding-top: 6px;
-  }    
+    height: 300px;
+    margin-top: 6%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }        
 }
 @media (max-width: 480px) {
   .tv-app-project-view-logo-item {

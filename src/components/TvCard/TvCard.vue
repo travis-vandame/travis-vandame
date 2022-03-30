@@ -13,7 +13,7 @@ const props = defineProps({
         </div>
         <div class="tv-section">
             <div class="tv-title">
-                <h6 style="padding: 0px; margin: 0px;">
+                <h6 style="padding: 0px; margin: 0px; text-transform: uppercase;">
                     <slot name="icon"></slot>{{ props.title }}
                 </h6>
                 <slot name="title"></slot>
@@ -42,7 +42,7 @@ const props = defineProps({
     width: 344px;
     padding: 16px;
     border-radius: 10px;
-    background-color: var(--color-primary-background-light);
+    background-color: var(--primary-color-light);
     transition: 0.3s;    
 }
 .tv-title-secondary {

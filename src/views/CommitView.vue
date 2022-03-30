@@ -118,7 +118,8 @@ onMounted(() => {
   height: 450px;
   margin-top: 6%;
   margin-right: 50px;
-    background-color: var(--color-primary-background-dark); 
+  border-radius: 10px;
+  background-color: var(--primary-color-dark); 
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -171,6 +172,8 @@ onMounted(() => {
     align-items: center;
     height: 300px;
     margin-top: 6%;
+    border-radius: 10px;
+    background-color: var(--primary-color-dark); 
     -ms-overflow-style: none;
     scrollbar-width: none;
   }        
@@ -204,7 +207,8 @@ onMounted(() => {
     flex-direction: column;
     overflow: scroll;
     align-items: center;
-    background-color: var(--color-primary-background-dark); 
+    border-radius: 10px;
+    background-color: var(--primary-color-dark); 
     height: 195px;
     padding-top: 6px;
   }  

@@ -40,9 +40,9 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     width: 344px;
-    background-color: var(--tv-c-black-mute); 
     padding: 16px;
     border-radius: 10px;
+    background-color: var(--color-primary-background-light);
     transition: 0.3s;    
 }
 .tv-title-secondary {

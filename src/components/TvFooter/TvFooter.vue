@@ -2,14 +2,22 @@
 import { ref } from 'vue';
 import TvLink from '../TvLink/TvLink.vue'
 
-const props = defineProps({
-  isFixed: Boolean,
+interface Props {
+  isFixed?: boolean
+  cssBackgroundColor?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  isFixed: true,
+  cssBackgroundColor: ''
 })
+
 const position = ref(props.isFixed ? 'fixed' : 'inline')
 </script>
 
 <template>
-  <div class="tv-app-footer">
+  <div 
+    class="tv-app-footer">
     <div class="vite">
       <tv-link to="http://www.vitejs.dev">
         <img
@@ -66,10 +74,11 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
 <style scoped>
 .tv-app-footer {
   display: flex;
+  position: v-bind(position);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between; /* :/ align justify bla.... */
-  background-color: var(--tv-c-black-mute);
+  background-color: v-bind(cssBackgroundColor);
   transition: 0.3s ease;
 }
 .logo {
@@ -82,11 +91,6 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
 }
 .logo-m{fill:#74a9f6;}
 .logo-text{fill:#fbfbfe;}
-
-.vite {
-  
-}
-
 @media (max-width: 600px) { }
 @media (max-width: 480px) { 
   .logo {

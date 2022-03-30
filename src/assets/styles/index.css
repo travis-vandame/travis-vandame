@@ -1,7 +1,6 @@
+@import './variables.css';
 @import './base.css';
-@import './variables.css';
 @import './media.css';
-@import './variables.css';
 
 * { 
   /* border: 1px solid red; */

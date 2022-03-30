@@ -52,24 +52,20 @@ onMounted(() => {
     </div>
     <div class="tv-app-commit-view-scroll-mobile">
       <tv-card
-          class="tv-card"
-          v-for="commit in repoCommits"
-          :key="commit.node_id"
-          :title="commit.author.login"
-          secondary=""
-          :content="commit.commit.message">
-          <template v-slot:secondary>
-            <tv-link :to="commit.html_url">{{ commit.commit.tree.sha.substring(0, 7) }}</tv-link>
-          </template>
+        class="tv-card"
+        v-for="commit in repoCommits"
+        :key="commit.node_id"
+        :title="commit.author.login"
+        secondary=""
+        :content="commit.commit.message">
+        <template v-slot:secondary>
+          <tv-link :to="commit.html_url">{{ commit.commit.tree.sha.substring(0, 7) }}</tv-link>
+        </template>
       </tv-card>
     </div>
   </div>
 </template>
 <style scoped>
-.tv-app-commit-view-scroll {
-  display: flex;
-  flex-direction: column;  
-}
 .tv-app-commit-view-logo {
   display: flex;
   flex-direction: row;
@@ -121,6 +117,8 @@ onMounted(() => {
   align-items: center;
   height: 450px;
   margin-top: 6%;
+  margin-right: 50px;
+    background-color: var(--color-primary-background-dark); 
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -206,6 +204,7 @@ onMounted(() => {
     flex-direction: column;
     overflow: scroll;
     align-items: center;
+    background-color: var(--color-primary-background-dark); 
     height: 195px;
     padding-top: 6px;
   }  

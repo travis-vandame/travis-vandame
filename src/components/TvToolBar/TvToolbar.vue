@@ -7,6 +7,9 @@ interface Props {
     minimized?: boolean
     menuActive?: boolean
     minimizeDisabled?: boolean
+    cssBackgroundColor?: string
+    cssMenuBackgroundColor?: string
+    cssBoxShadow?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -14,6 +17,9 @@ const props = withDefaults(defineProps<Props>(), {
     minimized: false,
     menuActive: false,
     minimizeDisabled: false,
+    cssBackgroundColor: '',
+    cssMenuBackgroundColor: '',
+    cssBoxShadow: ''
 })
 
 const title = ref('')
@@ -108,17 +114,15 @@ onMounted(() => {
     flex-wrap: wrap;
     position: fixed;
     flex-basis: auto;
-    height: v-bind(menuHeight);
     width: v-bind(barWidth);
     align-items: center;
-    background-color: var(--tv-c-black-mute);
-    box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
+    background-color: v-bind(cssBackgroundColor);
+    box-shadow: v-bind(cssBoxShadow);
     border-bottom-right-radius: 10px;
 }
 .tv-app-toolbar-title {
     margin: 0px; 
     padding: 0px; 
-    color: var(--tv-c-white-mute);    
 }
 .tv-app-toolbar-logo {
     margin: 0px 15px 0px 15px;
@@ -156,7 +160,7 @@ onMounted(() => {
 }
 .tv-app-toolbar-menu {
     margin-left: auto;
-    margin-right: 16px;
+    margin-right: 16px;  
 }
 @media (max-width: 800px) {
     .tv-app-toolbar-headline {
@@ -165,10 +169,6 @@ onMounted(() => {
 }
 /* TODO: Fix this should be at 600px but slight icon bug so set to 610 */
 @media (max-width: 610px) {
-    .tv-app-toolbar {
-        width: v-bind(barWidth);
-        height: v-bind(menuHeight);
-    }
     .tv-app-toolbar-navigation {
         display: none;
     }
@@ -179,7 +179,8 @@ onMounted(() => {
         width: 60px;
         max-width: fit-content;
         height: 210px;
-        box-shadow: 1px 1px 3px 1px var(--tv-c-anchor-green);
+        background-color: v-bind(cssBackgroundColor);
+        box-shadow: v-bind(cssBoxShadow);
     }
     .tv-app-toolbar-logo {
         margin: 10px 0px 0px 0px;
@@ -208,8 +209,7 @@ onMounted(() => {
         margin-left: 10px;
         width: 100%;
         flex-basis: 100%;
-        background-color: var(--tv-c-black-mute);
-        box-shadow: 3px 3px 2px -1px var(--tv-c-anchor-green);
+        box-shadow: v-bind(cssBoxShadow);        
     }
 }
 </style>

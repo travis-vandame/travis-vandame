@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TvToolbar from './components/TvToolbar/TvToolbar.vue'
+import TvToolbar from "./components/TvToolbar/TvToolbar.vue"
 import TvFooter from "./components/TvFooter/TvFooter.vue"
 import TvButton from "./components/TvButton/TvButton.vue"
 import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
@@ -11,7 +11,13 @@ function eventListener(event: Object) { }
 <template>
   <div class="tv-app">
     <div class="tv-app-header">
-      <tv-toolbar title="Travis VanDame" v-on:toolbarEvent="eventListener">
+      <tv-toolbar 
+        v-on:toolbarEvent="eventListener"
+        title="Travis VanDame"
+        cssBackgroundColor="var(--primary-color-dark)"
+        cssMenuBackgroundColor=""
+        cssBoxShadow="var(--primary-box-shadow)" 
+        >
         <template v-slot:logo>
           <tv-link to="http://travis-vandame/github.io">
               <font-awesome-icon
@@ -25,32 +31,32 @@ function eventListener(event: Object) { }
               text="Home"
               to="/home"
               :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor="var(--tv-c-black-mute)"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>
           <tv-button 
               text="About"
               to="/about"
               :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor="var(--tv-c-black-mute)"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>
           <tv-button 
               text="Commits"
               to="/commit"
               :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor="var(--tv-c-black-mute)"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>                        
           <tv-button 
               text="Project"
               to="/project"
               :cssOutline="false"
-              cssTextColor="var(--tv-c-anchor-green)"
-              cssBackgroundColor="var(--tv-c-black-mute)"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
               cssBackgroundColorHover="var(--color-background-soft)">
           </tv-button>
         </template>
@@ -116,7 +122,10 @@ function eventListener(event: Object) { }
         </tv-button>      
       </nav>
       <aside class="tv-app-aside">ASide</aside>  
-      <tv-footer :isFixed="true">footer</tv-footer> 
+      <tv-footer 
+        :isFixed="false"
+        cssBackgroundColor="var(--primary-color-light)">
+      </tv-footer> 
     </div>
   </div>
 </template>

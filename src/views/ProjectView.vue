@@ -114,7 +114,6 @@ onMounted(() => {
 }
 .tv-app-project-view-logo-item-title-text-three {
   letter-spacing: 1.5px;
-  color: lightseagreen;
   font-size: medium;
 }
 .tv-app-project-view-logo-item-title-text-two span {
@@ -128,6 +127,8 @@ onMounted(() => {
   width: 100%;
   overflow: scroll;
   align-items: center;
+  background-color: var(--color-primary-background-dark); 
+  margin-right: 50px;
   height: 450px;
   margin-top: 6%;
   -ms-overflow-style: none;
@@ -215,6 +216,7 @@ onMounted(() => {
     flex-direction: column;
     overflow: scroll;
     align-items: center;
+    background-color: var(--color-primary-background-dark);     
     height: 195px;
     padding-top: 6px;
   }  

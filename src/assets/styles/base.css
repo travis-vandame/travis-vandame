@@ -7,8 +7,8 @@ body {
   font-size: 16px; /* TODO: set to 14px for mobile */
   font-weight: normal;
   letter-spacing: 0.5px; /* TODO: set to 0.25px for mobile */
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--primary-color-text);
+  background: var(--primary-color);
   transition: color 0.5s, background-color 0.5s;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,12 +17,6 @@ body {
 
 #app {
   font-family: 'Roboto', sans-serif;
-}
-
-.body1 {
-  font-size: 16px;
-  font-weight: normal;
-  letter-spacing: 0.5px;
 }
 
 h1 {
@@ -72,6 +66,18 @@ h6 {
   letter-spacing: 0.1px;
   font-weight: 500;
 
+}
+
+.body1 {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.body2 {
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.25px;
 }
 
 button {

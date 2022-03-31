@@ -156,12 +156,6 @@ function eventListener(event: Object) { }
     display: flex;
     flex-direction: column;
   }
-  .tv-app-navigation {
-    /* TODO: Fix
-    display: flex;
-    justify-content: space-evenly;
-    */
-  }
   .tv-app-aside {
     display: none;
   }

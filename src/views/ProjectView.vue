@@ -8,12 +8,33 @@ import TvLink from '../components/TvLink/TvLink.vue'
 
 const userRepos = ref<ITvGitHubUsernameRepos[]>()
 
-async function fetchGitHubRepos({ owner }: { owner: string; }) {
-  userRepos.value = await TvGitHubRestApi.fetchUsernameRepos(owner)
+//async function fetchGitHubRepos({ owner }: { owner: string }) {
+//  const data = await TvGitHubRestApi.fetchUsernameRepos(owner)
+//  
+//  userRepos.value
+//}
+
+async function fetchGitHubReposByUserRepo({ owners }: { owners: Array<string>[] }) {
+  const data = await TvGitHubRestApi.fetchReposByUserRepo(owners)
+
+  userRepos.value = data
 }
 
 onMounted(() => {
-  fetchGitHubRepos({ owner: 'vuejs'})
+  // fetchGitHubRepos({ owner: 'vuejs'})
+  
+  let owners = [
+    ['vuejs', 'vue'],
+    ['travis-vandame', 'travis-vandame'],
+    ['vitejs', 'vite'],
+    ['vuejs', 'core'],
+    ['microsoft', 'TypeScript'],
+    ['johnsoncodehk', 'volar'],
+    ['vuejs', 'router'],
+    ['DefinitelyTyped', 'DefinitelyTyped'] 
+  ]
+
+  fetchGitHubReposByUserRepo({owners: owners})
 })
 </script>
 

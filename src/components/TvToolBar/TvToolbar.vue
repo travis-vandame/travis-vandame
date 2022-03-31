@@ -176,7 +176,7 @@ onMounted(() => {
 @media (max-width: 480px) {
     .tv-app-toolbar {
         flex-direction: column;
-        width: 60px;
+        width: 40px;
         max-width: fit-content;
         height: 210px;
         background-color: v-bind(cssBackgroundColor);
@@ -207,8 +207,11 @@ onMounted(() => {
     .tv-app-toolbar-menu {
         padding: 15px;
         margin-left: 10px;
-        width: 100%;
         flex-basis: 100%;
+        max-width: fit-content;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: v-bind(cssBackgroundColor);
         box-shadow: v-bind(cssBoxShadow);        
     }
 }

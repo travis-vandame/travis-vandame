@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useWindow } from '../../composables/window'
 
-const { windowHeight, windowWidth } = useWindow()
+const version = __APP_VERSION__
+
+// const { windowHeight, windowWidth } = useWindow()
 const screenHeight = screen.height
 const screenWidth = screen.width
 </script>
@@ -10,7 +12,8 @@ const screenWidth = screen.width
   <div class="display-information">
     <div class="window caption">
       <span>
-        Window H: {{ windowHeight }} W: {{ windowWidth }}
+        Version: {{ version }}
+        <!-- Window H: {{ windowHeight }} W: {{ windowWidth }} -->
       </span>
     </div>
     <div class="screen caption">

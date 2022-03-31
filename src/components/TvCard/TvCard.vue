@@ -1,8 +1,20 @@
 <script setup lang="ts">
-const props = defineProps({
-  title: { type: String, required: false },
-  secondary: { type: String, required: false },
-  content: { type: String, required: false }
+interface Props {
+    title?: string
+    secondary?: string
+    content?: string
+    cssBackgroundColor?: string
+    cssBackgroundColorCard?: string
+    cssBoxShadow?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    title: '',
+    secondary: '',
+    content: '',
+    cssBackgroundColor: '',
+    cssBackgroundColorCard: '',
+    cssBoxShadow: ''
 })  
 </script>
 
@@ -42,6 +54,7 @@ const props = defineProps({
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: v-bind(cssBackgroundColor);
 }
 .tv-app-c-container {
     display: flex;
@@ -49,8 +62,9 @@ const props = defineProps({
     flex-basis: 100%;
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--primary-color-light);
-    transition: 0.3s;    
+    background-color: v-bind(cssBackgroundColorCard);
+    transition: 0.3s; 
+    margin:20px;
 }
 .tv-title-secondary {
     margin-bottom: 18px;
@@ -59,5 +73,9 @@ const props = defineProps({
     margin-top: 18px;
 }
 @media (max-width: 600px) { }
-@media (max-width: 480px) { }
+@media (max-width: 480px) { 
+    .tv-app-card {
+        background-color: v-bind(cssBackgroundColor);
+    }
+}
 </style>

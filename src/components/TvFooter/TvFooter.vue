@@ -74,7 +74,6 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
 <style scoped>
 .tv-app-footer {
   display: flex;
-  position: v-bind(position);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between; /* :/ align justify bla.... */
@@ -91,7 +90,9 @@ const position = ref(props.isFixed ? 'fixed' : 'inline')
 }
 .logo-m{fill:#74a9f6;}
 .logo-text{fill:#fbfbfe;}
-@media (max-width: 600px) { }
+@media (max-width: 600px) { 
+
+}
 @media (max-width: 480px) { 
   .logo {
     height: 46px;

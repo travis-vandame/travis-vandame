@@ -11,37 +11,45 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <div class="tv-app-track">
-        <div class="tv-app-t-content">
-            <slot name="content"></slot>
+    <div class="tofix">
+        <div class="tv-app-track">
+            <div class="tv-app-t-content">
+                <slot name="content"></slot>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
+.tofix {
+    display: flex;
+    flex-direction: row;
+}
 .tv-app-track {
     display: flex;
     flex-direction: row;
-    width: 400px;
-    height: 300px;
+    height: 500px;
     background-color: v-bind(cssBackgroundColor);
-    margin: 20px;
+    margin: 80px 20px 20px 20px;
     border-radius: 10px;
 }
 .tv-app-t-content {
     display: flex;
     flex-direction: column;
-    margin: 24px;
+    margin: 15px;
     flex-basis: 100%;
     max-height: max-content;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-x: hidden;
+    border-radius: 10px;
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  background: var(--primary-color-light);
+  border-radius: 10px;
 }
 
 /* Track */
@@ -64,8 +72,12 @@ const props = withDefaults(defineProps<Props>(), {
 @media (max-width: 610px) { }
 @media (max-width: 480px) {    
     .tv-app-track {
-        width: 335px;
-        height: 215px;
+        display: flex;
+        flex-direction: row;
+        height: 225px;
+        background-color: v-bind(cssBackgroundColor);
+        margin: 0px 20px 20px 20px;
+        border-radius: 10px;
     }
 }
 </style>

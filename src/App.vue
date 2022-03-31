@@ -11,7 +11,7 @@ function eventListener(event: Object) { }
 <template>
   <div class="tv-app">
     <div class="tv-app-header">
-      <tv-toolbar 
+      <tv-toolbar class="tv-app-toolbar"
         v-on:toolbarEvent="eventListener"
         title="Travis VanDame"
         cssBackgroundColor="var(--primary-color-dark)"
@@ -86,7 +86,6 @@ function eventListener(event: Object) { }
           <router-view></router-view>
         </div>
       </main>
-      <!-- <nav class="navigation" style="display: flex; position: fixed; bottom: 100px;"> -->
       <nav class="tv-app-navigation">
         <tv-button 
             text="Home"
@@ -121,11 +120,13 @@ function eventListener(event: Object) { }
             cssBackgroundColorHover="var(--color-background-soft)">
         </tv-button>      
       </nav>
-      <aside class="tv-app-aside">ASide</aside>  
-      <tv-footer 
-        :isFixed="false"
+      <aside class="tv-app-aside">ASide</aside>
+    </div>
+    <div>
+      <tv-footer class="tv-app-footer" 
+        :isFixed="true"
         cssBackgroundColor="var(--primary-color-light)">
-      </tv-footer> 
+      </tv-footer>     
     </div>
   </div>
 </template>
@@ -139,11 +140,19 @@ function eventListener(event: Object) { }
 }
 .tv-app-body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  flex-basis: 100%;
   flex: 1;
 }
+/* TODO: Review this looks like it could be removed with minor changes */
 .tv-app-main {
   flex-grow: 1;  
+}
+.tv-app-vue-router {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .tv-app-navigation {
   display: none;

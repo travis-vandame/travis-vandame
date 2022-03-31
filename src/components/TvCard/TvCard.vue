@@ -7,40 +7,47 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="tv-card-container">
-        <div class="tv-media">
-            <slot name="media"></slot>
-        </div>
-        <div class="tv-section">
-            <div class="tv-title">
-                <h6 style="padding: 0px; margin: 0px; text-transform: uppercase;">
-                    <slot name="icon"></slot>{{ props.title }}
-                </h6>
-                <slot name="title"></slot>
+    <div class="tv-app-card">
+        <div class="tv-app-c-container">
+            <div class="tv-media">
+                <slot name="media"></slot>
             </div>
-            <div class="tv-title-secondary">
-                <span class="caption">{{ props.secondary }}</span>
-                <slot name="secondary"></slot>
+            <div class="tv-section">
+                <div class="tv-title">
+                    <h6 style="padding: 0px; margin: 0px; text-transform: uppercase;">
+                        <slot name="icon"></slot>{{ props.title }}
+                    </h6>
+                    <slot name="title"></slot>
+                </div>
+                <div class="tv-title-secondary">
+                    <span class="caption">{{ props.secondary }}</span>
+                    <slot name="secondary"></slot>
+                </div>
             </div>
-        </div>
-        <div class="tv-section">
-            <div class="tv-content">
-                <span class="body1">{{ props.content }}</span>
-                <slot name="content">{{ props.content }}</slot>                
+            <div class="tv-section">
+                <div class="tv-content">
+                    <span class="body1">{{ props.content }}</span>
+                    <slot name="content">{{ props.content }}</slot>                
+                </div>
             </div>
-        </div>
-        <div class="tv-action">
-            <slot name="action"></slot>
+            <div class="tv-action">
+                <slot name="action"></slot>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.tv-card-container {
+.tv-app-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tv-app-c-container {
     display: flex;
     flex-direction: column;
-    width: 344px;
-    padding: 16px;
+    flex-basis: 100%;
+    padding: 20px;
     border-radius: 10px;
     background-color: var(--primary-color-light);
     transition: 0.3s;    
@@ -48,16 +55,9 @@ const props = defineProps({
 .tv-title-secondary {
     margin-bottom: 18px;
 }
-
 .tv-action {
     margin-top: 18px;
 }
 @media (max-width: 600px) { }
-@media (max-width: 480px) {
-    .tv-card-container {
-        display: flex;
-        flex-direction: column;
-        width: 304px;
-    }
-}
+@media (max-width: 480px) { }
 </style>

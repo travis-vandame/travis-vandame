@@ -53,7 +53,20 @@ npm run build
 npm run lint
 ```
 
+# Preview locally before deployment
+```sh
+npm run preview
+```
+
 ### GitHub Pages Deployment
+
+Set the correct base in vite.config.js
+https://<USERNAME>.github.io/ 
+    base: Omit base it's not needed
+https://<USERNAME>.github.io/<REPO> 
+    base: '/<REPO>/'
+
+TODO: creating deploy sh instructions...
 
 ```sh
 git subtree push --prefix dist origin gh-pages

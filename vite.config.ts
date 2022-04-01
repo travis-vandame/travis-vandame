@@ -5,7 +5,6 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  //base: "/travis-vandame/",
   base: '/travis-vandame/',
   plugins: [vue({
     reactivityTransform: true
@@ -18,4 +17,17 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  /* Testing
+  build: {
+    sourcemap: true,
+    emptyOutDir: true, // Clear build dist folder before build
+    rollupOptions: {
+      output: {
+        entryFileNames: "[name].js",
+        chunkFileNames: "[name].js",
+        assetFileNames: "[name].[ext]"
+      }
+    }
+  }
+  */
 });

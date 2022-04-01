@@ -35,6 +35,8 @@ const props = withDefaults(defineProps<Props>(), {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  width: 50%;
 }   
 .tv-app-l-content {
   display: flex;
@@ -74,8 +76,19 @@ const props = withDefaults(defineProps<Props>(), {
   letter-spacing: 2.0px;
   font-size: medium;
 }  
-@media (max-width: 800px) { }
-@media (max-width: 610px) { }
+@media (max-width: 800px) { 
+  .tv-app-logo {
+    align-items: center;
+    width: 100%
+  }
+  .tv-app-l-i-container .tv-app-t {
+    font-size: 150px;
+  }
+  .tv-app-l-i-container .tv-app-v {
+    font-size: 175px;
+  }     
+}
+@media (max-width: 610px) {  }
 @media (max-width: 480px) {
   .tv-app-l-i-container {
     text-align: center;

@@ -81,11 +81,9 @@ function eventListener(event: Object) { }
       </tv-toolbar>
     </div>
     <div class="tv-app-body">
-      <main class="tv-app-main">
-        <div class="tv-app-vue-router">
-          <router-view></router-view>
-        </div>
-      </main>
+      <div class="tv-app-vue-router">
+        <router-view></router-view>
+      </div>      
       <nav class="tv-app-navigation">
         <tv-button 
             text="Home"
@@ -122,8 +120,8 @@ function eventListener(event: Object) { }
       </nav>
       <aside class="tv-app-aside">ASide</aside>
     </div>
-    <div>
-      <tv-footer class="tv-app-footer" 
+    <div class="tv-app-footer">
+      <tv-footer
         :isFixed="true"
         cssBackgroundColor="var(--primary-color-light)">
       </tv-footer>     
@@ -146,13 +144,8 @@ function eventListener(event: Object) { }
   flex: 1;
 }
 /* TODO: Review this looks like it could be removed with minor changes */
-.tv-app-main {
-  flex-grow: 1;  
-}
 .tv-app-vue-router {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-grow: 1;  
 }
 .tv-app-navigation {
   display: none;
@@ -160,21 +153,6 @@ function eventListener(event: Object) { }
 .tv-app-aside {
   display: none;
 }
-@media (max-width: 600px) {
-  .tv-app-vue-router {
-    display: flex;
-    flex-direction: column;
-  }
-  .tv-app-aside {
-    display: none;
-  }
-}
-@media (max-width: 480px) {
-  .tv-app-navigation {
-    display: none;
-  }
-  .tv-app-aside {
-    display: none;
-  }
-}
+@media (max-width: 600px) { }
+@media (max-width: 480px) { }
 </style>

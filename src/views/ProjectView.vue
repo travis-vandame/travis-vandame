@@ -3,6 +3,7 @@ import type { ITvGitHubUsernameRepos } from '../services/github/types/index';
 
 import { TvGitHubRestApi } from '../services/github/TvGitHubRestService'
 import { onMounted, ref } from 'vue';
+
 import TvCard from '../components/TvCard/TvCard.vue'
 import TvLink from '../components/TvLink/TvLink.vue'
 import TvTrack from '../components/TvTrack/TvTrack.vue'
@@ -35,7 +36,7 @@ onMounted(() => {
 <template>
   <div class="tv-app-project-view">
     <div class="tv-app-p-content">
-      <tv-logo class="tv-logo"></tv-logo>
+      <tv-logo></tv-logo>
       <tv-track class="tv-app-desktop-track"
         cssBoxShadow="var(--primary-box-shadow-scrollbar)" 
         cssBackgroundColor="">
@@ -61,6 +62,7 @@ onMounted(() => {
       <tv-track class="tv-app-mobile-track"
         cssBoxShadow="var(--primary-box-shadow-scrollbar)" 
         cssBackgroundColor="var(--primary-color)">
+        <!-- TODO: TvTrack will handle this so there will be no need for a-->
         <template v-slot:content>
           <tv-card
             class="tv-card"
@@ -94,10 +96,6 @@ onMounted(() => {
   flex-direction: row;
   flex: 1;
 }
-.tv-logo {
-  align-items: center;
-  width: 50%;
-}
 .tv-app-desktop-track {
   align-items: center;
   width: 50%;
@@ -105,7 +103,6 @@ onMounted(() => {
 .tv-app-mobile-track {
   display: none;
 }
-
 @media (max-width: 800px) { 
   .tv-app-project-view{
     display: flex;
@@ -114,11 +111,7 @@ onMounted(() => {
   .tv-app-p-content {
     display: flex;
     flex-direction: column;
-  }
-  .tv-logo {
-    align-items: center;
-    width: 100%
-  }    
+  }   
   .tv-card {
     margin: 0px;
   }
@@ -128,7 +121,6 @@ onMounted(() => {
   .tv-app-mobile-track {
     display: flex;
   }
-
 }
 /* TODO: Fix this should be 600 */
 @media (max-width: 610px) { 
@@ -139,11 +131,7 @@ onMounted(() => {
   .tv-app-p-content {
     display: flex;
     flex-direction: column;
-  }
-  .tv-logo {
-    align-items: center;
-    width: 100%
-  }    
+  }  
   .tv-card {
     margin: 0px;
   }
@@ -155,6 +143,12 @@ onMounted(() => {
   }
 }
 @media (max-width: 480px) {
+  .tv-app-mobile-track {
+    display: flex;
+  }
+  .tv-app-desktop-track {
+    display: none;
+  }  
   .tv-app-project-view{
     display: flex;
     flex-direction: row;
@@ -162,19 +156,9 @@ onMounted(() => {
   .tv-app-p-content {
     display: flex;
     flex-direction: column;
-  }
-  .tv-logo {
-    align-items: center;
-    width: 100%
-  }    
+  }   
   .tv-card {
     margin: 0px;
-  }
-  .tv-app-desktop-track {
-    display: none;
-  }
-  .tv-app-mobile-track {
-    display: flex;
   }
 }
 </style>

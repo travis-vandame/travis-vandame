@@ -1,125 +1,158 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+import TvToolbar from "./components/TvToolbar/TvToolbar.vue"
+import TvFooter from "./components/TvFooter/TvFooter.vue"
+import TvButton from "./components/TvButton/TvButton.vue"
+import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
+import TvLink from "./components/TvLink/TvLink.vue"
+
+function eventListener(event: Object) { }
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <div class="tv-app">
+    <div class="tv-app-header">
+      <tv-toolbar class="tv-app-toolbar"
+        v-on:toolbarEvent="eventListener"
+        title="Travis VanDame"
+        cssBackgroundColor="var(--primary-color-dark)"
+        cssMenuBackgroundColor=""
+        cssBoxShadow="var(--primary-box-shadow)" 
+        >
+        <template v-slot:logo>
+          <tv-link to="http://travis-vandame/github.io">
+              <font-awesome-icon
+                  size="lg"           
+                  :icon="['fa-brands', 'vuejs']" />
+          </tv-link>          
+        </template>
+        <template v-slot:navigation>
+          <tv-button 
+              text="Home"
+              to="/home"
+              :cssOutline="false"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
+              cssBackgroundColorHover="var(--color-background-soft)">
+          </tv-button>
+          <tv-button 
+              text="About"
+              to="/about"
+              :cssOutline="false"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
+              cssBackgroundColorHover="var(--color-background-soft)">
+          </tv-button>
+          <tv-button 
+              text="Commits"
+              to="/commit"
+              :cssOutline="false"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
+              cssBackgroundColorHover="var(--color-background-soft)">
+          </tv-button>                        
+          <tv-button 
+              text="Project"
+              to="/project"
+              :cssOutline="false"
+              cssTextColor="var(--color-secondary-background-text)"
+              cssBackgroundColor="var(--color-secondary-background)"
+              cssBackgroundColorHover="var(--color-background-soft)">
+          </tv-button>
+        </template>
+        <template v-slot:icons-social>
 
-    <div class="wrapper">
-      <HelloWorld msg="Travis VanDame" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+        </template>
+        <template v-slot:menu-icon>
+          <font-awesome-icon
+              :icon="['fas', 'gear']" 
+              size="lg" 
+              color="var(--tv-c-white-mute)" />          
+        </template>          
+        <template v-slot:menu>
+            <tv-display></tv-display>
+        </template>
+        <template v-slot:minimal-icon>
+            <font-awesome-icon
+                :icon="['fas', 'minimize']"
+                size="lg" />          
+        </template>
+      </tv-toolbar>
     </div>
-  </header>
-
-  <RouterView />
+    <div class="tv-app-body">
+      <div class="tv-app-vue-router">
+        <router-view></router-view>
+      </div>      
+      <nav class="tv-app-navigation">
+        <tv-button 
+            text="Home"
+            to="/home"
+            :cssOutline="false"
+            cssTextColor="var(--tv-c-anchor-green)"
+            cssBackgroundColor="var(--tv-c-black-mute)"
+            cssBackgroundColorHover="var(--color-background-soft)">
+        </tv-button>
+        <tv-button 
+            text="About"
+            to="/about"
+            :cssOutline="false"
+            cssTextColor="var(--tv-c-anchor-green)"
+            cssBackgroundColor="var(--tv-c-black-mute)"
+            cssBackgroundColorHover="var(--color-background-soft)">
+        </tv-button>
+        <tv-button 
+            text="Commits"
+            to="/commit"
+            :cssOutline="false"
+            cssTextColor="var(--tv-c-anchor-green)"
+            cssBackgroundColor="var(--tv-c-black-mute)"
+            cssBackgroundColorHover="var(--color-background-soft)">
+        </tv-button>                        
+        <tv-button 
+            text="Project"
+            to="/project"
+            :cssOutline="false"
+            cssTextColor="var(--tv-c-anchor-green)"
+            cssBackgroundColor="var(--tv-c-black-mute)"
+            cssBackgroundColorHover="var(--color-background-soft)">
+        </tv-button>      
+      </nav>
+      <aside class="tv-app-aside">ASide</aside>
+    </div>
+    <div class="tv-app-footer">
+      <tv-footer
+        :isFixed="true"
+        cssBackgroundColor="var(--primary-color-light)">
+      </tv-footer>     
+    </div>
+  </div>
 </template>
 
 <style>
-@import "@/assets/base.css";
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+@import "@/assets/styles/index.css";
+.tv-app {
+  display: flex;
+  flex-direction: column;  
+  min-height: 100vh;
 }
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.tv-app-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-basis: 100%;
+  flex: 1;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* TODO: Review this looks like it could be removed with minor changes */
+.tv-app-vue-router {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.tv-app-navigation {
+  display: none;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.tv-app-aside {
+  display: none;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+@media (max-width: 600px) { }
+@media (max-width: 480px) { }
 </style>

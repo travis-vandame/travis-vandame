@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: var(--tv-c-light-primary);
+        --primary-color-light: var(--tv-c-light-primary-light);
+        --primary-color-dark: var(--tv-c-light-primary-dark);
+        --primary-color-text: var(--tv-c-light-primary-text);
+        --primary-box-shadow: var(--tv-s-light-box-shadow);
+        --secondary-color: var(--tv-c-light-secondary);
+        --secondary-color-light: var(--tv-c-light-secondary-light);
+        --secondary-color-dark: var(--tv-c-light-secondary-dark);
+        --secondary-color-text: var(--tv-c-light-secondary-text);
+        --secondary-box-shadow: var(--tv-s-light-box-shadow);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: var(--tv-c-dark-primary);
+        --primary-color-light: var(--tv-c-dark-primary-light);
+        --primary-color-dark: var(--tv-c-dark-primary-dark);
+        --primary-color-text: var(--tv-c-dark-primary-text);
+        --primary-box-shadow: var(--tv-s-dark-box-shadow);
+        --secondary-color: var(--tv-c-dark-secondary);
+        --secondary-color-light: var(--tv-c-dark-secondary-light);
+        --secondary-color-dark: var(--tv-c-dark-secondary-dark);
+        --secondary-color-text: var(--tv-c-dark-secondary-text);
+        --secondary-box-shadow: var(--tv-s-dark-box-shadow);
+    }
+}
+@media (max-width: 600px) { }
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        letter-spacing: 0.25px;
+    }
+}

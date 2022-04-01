@@ -168,7 +168,7 @@ onMounted(() => {
     }
 }
 /* TODO: Fix this should be at 600px but slight icon bug so set to 610 */
-@media (max-width: 610px) {
+@media (max-width: 600px) {
     .tv-app-toolbar-navigation {
         display: none;
     }

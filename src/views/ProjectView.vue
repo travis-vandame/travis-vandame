@@ -89,16 +89,14 @@ onMounted(() => {
 .tv-app-project-view {
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 .tv-app-p-content {
   display: flex;
   flex-direction: row;
-  flex: 1;
 }
 .tv-app-desktop-track {
   align-items: center;
-  width: 50%;
+  width: 40%;
 }
 .tv-app-mobile-track {
   display: none;

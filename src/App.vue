@@ -21,8 +21,7 @@ function eventListener(event: Object) { }
         <template v-slot:logo>
           <tv-link to="http://travis-vandame/github.io">
               <font-awesome-icon
-                  size="lg" 
-                  color="var(--tv-c-anchor-green)"             
+                  size="lg"           
                   :icon="['fa-brands', 'vuejs']" />
           </tv-link>          
         </template>
@@ -75,8 +74,7 @@ function eventListener(event: Object) { }
         <template v-slot:minimal-icon>
             <font-awesome-icon
                 :icon="['fas', 'minimize']"
-                size="lg" 
-                color="var(--tv-c-white-mute)" />          
+                size="lg" />          
         </template>
       </tv-toolbar>
     </div>
@@ -145,7 +143,9 @@ function eventListener(event: Object) { }
 }
 /* TODO: Review this looks like it could be removed with minor changes */
 .tv-app-vue-router {
-  flex-grow: 1;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .tv-app-navigation {
   display: none;

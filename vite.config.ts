@@ -1,22 +1,24 @@
-import { fileURLToPath, URL } from "url";
+import { fileURLToPath, URL } from 'url'
 
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/travis-vandame/',
-  plugins: [vue({
-    reactivityTransform: true
-  })],
+  plugins: [
+    vue({
+      reactivityTransform: true
+    })
+  ],
   define: {
-    '__APP_VERSION__': JSON.stringify(process.env.npm_package_version),
+    __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
   /* Testing
   build: {
     sourcemap: true,
@@ -30,4 +32,4 @@ export default defineConfig({
     }
   }
   */
-});
+})

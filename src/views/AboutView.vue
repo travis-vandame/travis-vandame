@@ -1,91 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useFetch } from '../composables/fetch'
+
+const baseUrl = 'https://api.github.com/users/travis-vandame/repos'
+const { data, error } = useFetch(baseUrl)
+console.log(data.value)
+console.log(error.value)
+</script>
 
 <template>
   <div class="container">
-    <div class="logo">
-      <div class="logo-item">
-        <span class="letter-t">T</span>      
-        <span class="letter-v">V</span>
-        <span>
-          <div class="title">
-            <span class="title-text-one">Hummm.....</span> 
-            <span class="title-text-two">About</span> 
-            <span class="title-text-three">`In ${develop}ment`</span>
-          </div>
-        </span>
-      </div>       
+    <div v-if="error">{{ error }}</div>
+    <div v-else-if="data">
+      Data Loaded:
+      <pre>{{ data }}</pre>
     </div>
+    <div v-else>Loading....</div>
   </div>
 </template>
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;  
+@media (max-width: 800px) {
 }
-.logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 5%;
-}
-.logo-item {
-  text-align: center;
-  flex-basis: 100%;
-}
-.letter-t {
-  font-size: 150px;
-}
-.letter-v {
-  font-size: 200px;
-}
-.title {
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-  flex-basis: 50%;
-}
-.title-text-one {
-  margin-left: 10%;
-  text-align: center;
-  letter-spacing: 5px;
-}
-.title-text-two {
-  text-transform: uppercase;
-  font-size: 40px;
-  color: var(--tv-c-anchor-green);
-}
-
-.title-text-three {
-  letter-spacing: 10px;
-  font-size: medium;
-}
-@media (max-width: 800px) { 
-  .title-text-one {
-    margin-left: 25%;
-    text-align: center;
-    letter-spacing: 5px;
-  }  
-}
-@media (max-width: 600px) { 
-  .title-text-one {
-    margin-left: 25%;
-    text-align: center;
-    letter-spacing: 5px;
-  }
+@media (max-width: 600px) {
 }
 @media (max-width: 480px) {
-  .logo-item {
-    flex-basis: 85%;
-    text-align: center;
-  }
-  .title-text-one {
-    margin-left: 20%;
-    text-align: left;
-    letter-spacing: 5px;
-  }
-  .title-text-three {
-    letter-spacing: 8px;
-    font-size: medium;
-  }  
 }
 </style>

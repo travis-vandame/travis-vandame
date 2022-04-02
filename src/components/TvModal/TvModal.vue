@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
   <Transition name="modal">
-    <div v-if="isActive" class="modal-mask">
+    <div v-if="props.isActive" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
@@ -18,14 +18,9 @@ const props = defineProps({
           </div>
 
           <div class="modal-footer">
-            <slot name="footer">
-              default footer
-            </slot>
-            
-            <button
-              class="modal-default-button"
-              @click="$emit('close')">
-              
+            <slot name="footer">default footer</slot>
+
+            <button class="modal-default-button" @click="$emit('close')">
               OK
             </button>
           </div>

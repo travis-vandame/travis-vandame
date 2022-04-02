@@ -1,33 +1,40 @@
 <script setup lang="ts">
+/*
 interface Props {
-    cssBackgroundColor?: string
-    cssBoxShadow?: string
+  cssBackgroundColor?: string
+  cssBoxShadow?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    cssBackgroundColor: '',
-    cssBoxShadow: ''
+  cssBackgroundColor: '',
+  cssBoxShadow: ''
 })
+*/
 </script>
 
 <template>
-    <div class="tv-app-logo">
-        <div class="tv-app-l-content">
-            <div class="tv-app-l-initials">
-                <div class="tv-app-l-i-container">
-                  <span class="tv-app-t">T</span>      
-                  <span class="tv-app-v">V</span>
-                </div>           
-            </div>
-            <div class="tv-app-l-heading">
-              <div class="tv-app-l-h-title">
-                  <span class="tv-app-l-h-t-text-one">GitHub</span> 
-                  <span class="tv-app-l-h-t-text-two">Project <span class="tv-app-project-view-text-used">deps</span></span> 
-                  <span class="tv-app-l-h-t-text-three"><u>Project Dependencies</u></span>
-              </div>
-            </div>
+  <div class="tv-app-logo">
+    <div class="tv-app-l-content">
+      <div class="tv-app-l-initials">
+        <div class="tv-app-l-i-container">
+          <span class="tv-app-t">T</span>
+          <span class="tv-app-v">V</span>
         </div>
+      </div>
+      <div class="tv-app-l-heading">
+        <div class="tv-app-l-h-title">
+          <span class="tv-app-l-h-t-text-one">GitHub</span>
+          <span class="tv-app-l-h-t-text-two">
+            Project
+            <span class="tv-app-project-view-text-used">deps</span>
+          </span>
+          <span class="tv-app-l-h-t-text-three">
+            <u>Project Dependencies</u>
+          </span>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
@@ -37,7 +44,7 @@ const props = withDefaults(defineProps<Props>(), {
   justify-content: center;
   align-items: center;
   width: 50%;
-}   
+}
 .tv-app-l-content {
   display: flex;
   flex-direction: column;
@@ -71,24 +78,25 @@ const props = withDefaults(defineProps<Props>(), {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 14px;
-}  
+}
 .tv-app-l-h-t-text-three {
-  letter-spacing: 2.0px;
+  letter-spacing: 2px;
   font-size: medium;
-}  
-@media (max-width: 800px) { 
+}
+@media (max-width: 800px) {
   .tv-app-logo {
     align-items: center;
-    width: 100%
+    width: 100%;
   }
   .tv-app-l-i-container .tv-app-t {
     font-size: 150px;
   }
   .tv-app-l-i-container .tv-app-v {
     font-size: 175px;
-  }     
+  }
 }
-@media (max-width: 610px) {  }
+@media (max-width: 610px) {
+}
 @media (max-width: 480px) {
   .tv-app-l-i-container {
     text-align: center;
@@ -118,12 +126,13 @@ const props = withDefaults(defineProps<Props>(), {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-size: 14px;
-  }  
+  }
   .tv-app-l-h-t-text-three {
-    letter-spacing: 2.0px;
+    letter-spacing: 2px;
     font-size: medium;
-  }  
+  }
 }
 /* Galaxy Fold */
-@media (max-width: 280px) { }
+@media (max-width: 280px) {
+}
 </style>

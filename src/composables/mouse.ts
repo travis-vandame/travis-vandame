@@ -1,14 +1,18 @@
-import { ref } from "vue";
-import { useEventListener } from "./event";
+import { ref } from 'vue'
+import { useEventListener } from './event'
 
 export function useMouse() {
-    const x = ref(0)
-    const y = ref(0)
-   
-    useEventListener(window, 'mousemove', (event: { pageX: number; pageY: number; }) => {
-        x.value = event.pageX
-        y.value = event.pageY
-    })
+  const x = ref(0)
+  const y = ref(0)
 
-    return {x , y}
+  useEventListener(
+    window,
+    'mousemove',
+    (event: { pageX: number; pageY: number }) => {
+      x.value = event.pageX
+      y.value = event.pageY
+    }
+  )
+
+  return { x, y }
 }

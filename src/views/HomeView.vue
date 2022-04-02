@@ -4,23 +4,23 @@
   <div class="container">
     <div class="logo">
       <div class="logo-item">
-        <span class="letter-t">T</span>      
+        <span class="letter-t">T</span>
         <span class="letter-v">V</span>
         <span>
           <div class="title">
-            <span class="title-text-one">Full</span> 
-            <span class="title-text-two">Stack</span> 
+            <span class="title-text-one">Full</span>
+            <span class="title-text-two">Stack</span>
             <span class="title-text-three">`${develop}er`</span>
           </div>
         </span>
-      </div>       
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
 .container {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 .logo {
   display: flex;
@@ -59,14 +59,14 @@
   letter-spacing: 10px;
   font-size: medium;
 }
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
   .title-text-one {
     margin-left: 25%;
     text-align: center;
     letter-spacing: 5px;
-  }  
+  }
 }
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
   .title-text-one {
     margin-left: 25%;
     text-align: center;
@@ -86,6 +86,6 @@
   .title-text-three {
     letter-spacing: 8px;
     font-size: medium;
-  }  
+  }
 }
 </style>

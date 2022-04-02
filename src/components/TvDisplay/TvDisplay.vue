@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useWindow } from '../../composables/window'
+// import { useWindow } from '../../composables/window'
 
+// eslint-disable-next-line no-undef
 const version = __APP_VERSION__
 
 // const { windowHeight, windowWidth } = useWindow()
@@ -17,9 +18,7 @@ const screenWidth = screen.width
       </span>
     </div>
     <div class="screen caption">
-      <span>
-        Resolution {{ screenHeight }} x {{ screenWidth }}
-      </span>
+      <span>Resolution {{ screenHeight }} x {{ screenWidth }}</span>
     </div>
   </div>
 </template>

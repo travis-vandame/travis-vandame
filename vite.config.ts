@@ -5,7 +5,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/travis-vandame/',
+  // base: '/travis-vandame/',
+  // base: '/home/tvandame/public_html/vts/vueschool.vts.com/vuejs-3-travis-vandame/',
+  base: '/',
   plugins: [
     vue({
       reactivityTransform: true

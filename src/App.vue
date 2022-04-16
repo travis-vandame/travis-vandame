@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import TvToolbar from "./components/TvToolbar/TvToolbar.vue"
-import TvFooter from "./components/TvFooter/TvFooter.vue"
-import TvButton from "./components/TvButton/TvButton.vue"
-import TvDisplay from "./components/TvDisplay/TvDisplay.vue"
-import TvLink from "./components/TvLink/TvLink.vue"
-
-function eventListener(event: Object) { }
+import TvToolbar from './components/TvToolBar/TvToolbar.vue'
+import TvFooter from './components/TvFooter/TvFooter.vue'
+import TvButton from './components/TvButton/TvButton.vue'
+import TvDisplay from './components/TvDisplay/TvDisplay.vue'
+import TvLink from './components/TvLink/TvLink.vue'
 </script>
 
 <template>
@@ -13,7 +11,6 @@ function eventListener(event: Object) { }
     <div class="tv-app-header">
       <tv-toolbar
         class="tv-app-toolbar"
-        v-on:toolbarEvent="eventListener"
         title="Travis VanDame"
         cssBackgroundColor="var(--primary-color-dark)"
         cssMenuBackgroundColor=""

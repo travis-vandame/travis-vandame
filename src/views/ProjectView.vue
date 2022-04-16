@@ -19,7 +19,7 @@ async function fetchGitHubReposByUserRepo({
   const data = await TvGitHubRestApi.fetchReposByUserRepo(owners)
 
   userRepos.value = data
-  userRepos.value = []
+  // userRepos.value = []
 }
 
 onMounted(() => {
@@ -34,7 +34,7 @@ onMounted(() => {
     ['DefinitelyTyped', 'DefinitelyTyped']
   ]
 
-  // fetchGitHubReposByUserRepo({owners: owners})
+  fetchGitHubReposByUserRepo({ owners: owners })
 })
 </script>
 

@@ -15,12 +15,15 @@ async function fetchGitHubRepoCommits(
   { owner }: { owner: string },
   { repo }: { repo: string }
 ) {
-  // repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
-  repoCommits.value = []
+  repoCommits.value = await TvGitHubRestApi.fetchOwnerRepoCommits(owner, repo)
+  // repoCommits.value = []
 }
 
 onMounted(() => {
-  // fetchGitHubRepoCommits({ owner: 'travis-vandame' }, { repo: 'travis-vandame' })
+  fetchGitHubRepoCommits(
+    { owner: 'travis-vandame' },
+    { repo: 'travis-vandame' }
+  )
 })
 </script>
 

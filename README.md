@@ -1,15 +1,5 @@
 # Travis VanDame
 
-Hi, thanks for having an interest in my Vue framework personal project. This project is intended for employer's clients or anyone interested in Vue.
-
-The theme of this project is going to be organic and will surly change as time passes for right now it's focused on exploring Vue features and serving as a portfolio for myself and a place for others to explore a pure vue application.
-
-You will notice that there are no UI frameworks as the intention is to focus on building applications with just Vue tools for the most part. So yep I'm re-inventing some component wheel's just for the sake of knowledge.
-
-Ok so let's get on with setting things up. Oh and the following is just default vue stuff for now. It should work if not ping me and I'll help you out.
-
-Travis
-
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
